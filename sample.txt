@@ -151,8 +151,6 @@
 
     <section class="container">
 
- <div class="title">Our Branches</div>
-
         <!-- Branch Addresses -->
         <div class="branches">
             <div class="branch-card">
