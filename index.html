@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Balaji Sweets and Cool Drinks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -38,7 +39,7 @@
         /* Top bar */
         .top-bar {
             background-color: #8b2d1f;
-            color: #fff;
+            color: #FFD700;
             text-align: center;
             padding: 8px;
             font-size: 14px;
@@ -49,24 +50,30 @@
         header {
             background-color: #f8f3e8;
             padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             border-bottom: 2px solid #e0d2b5;
         }
 
-        .logo {
-            font-size: 26px;
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 32px;
             font-weight: bold;
             color: #8b2d1f;
+            margin: 0 40px;
         }
 
         nav a {
-            margin-left: 20px;
             text-decoration: none;
             color: #4a3a2f;
             font-size: 14px;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         nav a:hover {
@@ -97,7 +104,7 @@
             background-color: #f8f3e8;
             border: 2px solid #e0d2b5;
             padding: 25px;
-            border-radius: 8px;
+            border-radius: 100px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
         }
 
@@ -167,14 +174,14 @@
         }
 
         @media (max-width: 768px) {
-            header {
+            nav {
                 flex-direction: column;
-                gap: 15px;
-                text-align: center;
+                gap: 10px;
             }
 
-            nav a {
-                margin: 0 10px;
+            .nav-logo {
+                margin: 10px 0;
+                font-size: 28px;
             }
 
             .title {
@@ -277,12 +284,11 @@
     </div>
 
     <header>
-        <div class="logo">Balaji Sweets and Cool Drinks</div>
         <nav>
-            <a href="#">SHOP</a>
-            <a href="#">SPECIALS</a>
-            <a href="#">FESTIVE GIFTING</a>
             <a href="#">OUR STORY</a>
+            <a href="#">SPECIALS</a>
+            <span class="nav-logo">Balaji Sweets and Cool Drinks</span>
+            <a href="#">FESTIVE GIFTING</a>
             <a href="#">CONTACT</a>
         </nav>
     </header>
