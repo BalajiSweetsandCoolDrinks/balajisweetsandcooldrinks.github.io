@@ -215,10 +215,15 @@
                 flex-direction: row;
                 justify-content: space-between;
                 gap: 0;
+                position: relative; /* allow absolutely-positioned children */
             }
 
             .hamburger {
                 display: flex;
+                position: absolute; /* keep hamburger pinned to the left */
+                left: 15px;
+                top: 15px;
+                z-index: 1000; /* below the logo so the logo remains visible */
             }
 
             .nav-menu {
@@ -256,6 +261,13 @@
                 margin: 0;
                 font-size: 24px;
                 order: -1;
+                z-index: 1001; /* sit above the hamburger so it isn't hidden */
+                pointer-events: none; /* allow clicks to pass through to the hamburger */
+                max-width: calc(100% - 120px); /* avoid very long text overlapping the hamburger */
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .title {
