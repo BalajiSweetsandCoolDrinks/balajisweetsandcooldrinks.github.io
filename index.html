@@ -36,14 +36,27 @@
             pointer-events: none;
         }
 
-        /* Top bar */
+        /* Top bar with Scrolling Text */
         .top-bar {
             background-color: #8b2d1f;
             color: #FFD700;
-            text-align: center;
-            padding: 10px;
+            padding: 10px 0; /* Vertical padding only */
             font-size: 20px;
             letter-spacing: 1px;
+            overflow: hidden; /* Important for hiding the text as it leaves the bar */
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .top-bar span {
+            display: inline-block;
+            padding-left: 100%; /* Start off-screen to the right */
+            animation: scroll-left 15s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
         }
 
         /* Header */
@@ -61,7 +74,7 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            flex-wrap: wrap; /* Allows items to wrap while keeping logo centered */
+            flex-wrap: wrap; 
         }
 
         .nav-logo {
@@ -70,9 +83,8 @@
             font-weight: bold;
             color: #8b2d1f;
             text-align: center;
-            /* Keeps the logo on its own line/center on smaller screens */
-            flex-basis: auto; 
             margin: 0 20px;
+            flex-basis: auto;
         }
 
         nav a {
@@ -112,7 +124,7 @@
             background-color: #f8f3e8;
             border: 2px solid #e0d2b5;
             padding: 25px;
-            border-radius: 20px; /* Adjusted from 100px for better text fit */
+            border-radius: 20px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
         }
 
@@ -161,44 +173,24 @@
 
         /* Responsive Logic */
         @media (max-width: 1024px) {
-            .branches {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .nav-logo {
-                font-size: 28px;
-            }
+            .branches { grid-template-columns: repeat(2, 1fr); }
+            .nav-logo { font-size: 28px; }
         }
 
         @media (max-width: 850px) {
-            /* This forces the logo to be the center-top element */
             .nav-logo {
                 flex-basis: 100%;
-                order: -1; /* Keeps it at the top */
+                order: -1; 
                 margin: 0 0 10px 0;
             }
-            
-            nav {
-                gap: 15px;
-            }
+            nav { gap: 15px; }
         }
 
         @media (max-width: 600px) {
-            .branches {
-                grid-template-columns: 1fr;
-            }
-
-            .title {
-                font-size: 22px;
-            }
-
-            .branch-card {
-                padding: 18px;
-            }
-
-            nav a {
-                font-size: 11px;
-                letter-spacing: 0.5px;
-            }
+            .branches { grid-template-columns: 1fr; }
+            .title { font-size: 22px; }
+            nav a { font-size: 11px; }
+            .top-bar { font-size: 16px; } /* Smaller text for mobile */
         }
 
         /* WhatsApp Floating Button */
@@ -215,13 +207,7 @@
             justify-content: center;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             z-index: 1000;
-            transition: all 0.3s ease;
-            text-decoration: none;
             animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
         }
 
         .whatsapp-float svg {
@@ -240,7 +226,7 @@
 <body>
 
     <div class="top-bar">
-        We cater for all your special occasions
+        <span>We cater for all your special occasions</span>
     </div>
 
     <header>
