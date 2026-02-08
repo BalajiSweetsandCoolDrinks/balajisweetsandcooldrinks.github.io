@@ -62,6 +62,8 @@ function confirmCheckout(){ const name = (document.getElementById('custName')||{
   text += `%0ATotal: ₹${totalPrice}%0A`;
   if(name) text += `%0AName: ${encodeURIComponent(name)}%0A`;
   if(addr) text += `Address: ${encodeURIComponent(addr)}%0A`;
+  // clear cart before opening WhatsApp
+  clearCart();
   // open WhatsApp
   window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${text}`,'_blank');
   cancelCheckout();

@@ -1,64 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Specials - Balaji Sweets and Cool Drinks</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-  <style>
-  body { font-family: Georgia, serif; background: #fffdf5; color: #7a2d1d; margin:0; }
-  header { background: #f8f3e8; padding: 20px; border-bottom: 2px solid #e0d2b5; }
-  
-    .container { max-width: 900px; margin: 36px auto; padding: 20px; }
-    h1 { font-family: 'Great Vibes', cursive; font-size: 44px; color: #8b2d1f; text-align:center; margin-bottom: 10px; }
-    .lead { text-align:center; color:#4a3a2f; margin-bottom: 30px; }
-    article { background: #f8f3e8; border: 2px solid #e0d2b5; padding: 24px; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-    ul { line-height:1.8; }
-    .back { display:inline-block; margin-top:20px; color:#8b2d1f; text-decoration:none; }
-    @media (max-width:600px){ h1{ font-size:36px;} .container{ padding:12px; } }
-  </style>
-  <link rel="stylesheet" href="assets/cart.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specials - Balaji Sweets and Cool Drinks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: Georgia, serif;
+            background-color: #fffdf5;
+            color: #7a2d1d;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Watermark background image - full page single image */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url('images/indian-sweets.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.2;
+            z-index: -1;
+            filter: saturate(0.8) brightness(1.1);
+        }
+        
+        header { background: #f8f3e8; padding: 20px; border-bottom: 2px solid #e0d2b5; }
+        header .wrap { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+        header .logo { font-family: 'Great Vibes', cursive; font-size: 28px; color: #8b2d1f; }
+        header a { text-decoration: none; color: #4a3a2f; margin-left: 18px; font-size: 14px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; min-height: calc(100vh - 120px); display: flex; align-items: center; justify-content: center; }
+        
+        /* Centered Coming Soon Box */
+        .coming-soon-box {
+            max-width: 700px;
+            width: 100%;
+            background-color: rgba(255, 253, 245, 0.95);
+            border: 3px solid #e0d2b5;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(139, 45, 31, 0.2);
+        }
+        
+        .coming-soon-box h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 72px;
+            color: #8b2d1f;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .coming-soon-box .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #4a3a2f;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        
+        .coming-soon-box .message {
+            font-size: 18px;
+            color: #7a2d1d;
+            line-height: 1.8;
+            max-width: 450px;
+            margin: 0 auto 35px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 15px 45px;
+            background: #8b2d1f;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 45, 31, 0.3);
+        }
+        
+        .back-btn:hover {
+            background: #a63d2a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 45, 31, 0.4);
+        }
+        
+        @media (max-width: 600px) {
+            .coming-soon-box { padding: 45px 25px; }
+            .coming-soon-box h1 { font-size: 52px; }
+            .coming-soon-box .subtitle { font-size: 22px; }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/cart.css">
+    <link rel="stylesheet" href="assets/responsive.css">
 </head>
 <body>
-  <header>
-    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
-      <div style="font-family:'Great Vibes',cursive;font-size:28px;color:#8b2d1f;">Balaji Sweets and Cool Drinks</div>
-      <nav>
-        <a href="index.html" style="text-decoration:none;color:#4a3a2f;margin-left:18px;">Home</a>
-      </nav>
+<header>
+    <div class="wrap">
+        <div class="logo">Balaji Sweets and Cool Drinks</div>
+        <nav><a href="main.html">Home</a></nav>
     </div>
-  </header>
-
-  <main class="container">
-    <h1>Specials</h1>
-    <p class="lead">Seasonal favourites and chef's picks.</p>
-
-    <article>
-      <h2>This Week's Specials</h2>
-      <ul>
-        <li>Motichoor Laddoo - freshly made</li>
-        <li>Mango Rabri - limited time</li>
-        <li>Assorted Mithai Box - party pack</li>
-      </ul>
-
-      <a class="back" href="index.html">← Back to Home</a>
-    </article>
-  </main>
-  </body>
+</header>
+<main class="container">
+    <div class="coming-soon-box">
+        <h1>Coming Soon</h1>
+        <p class="subtitle">Special Offers Coming Soon!</p>
+        <p class="message">Exciting deals and special packages await you.<br>Stay tuned for the grand launch!</p>
+        <a href="main.html" class="back-btn">Back to Home</a>
+    </div>
+</main>
+</body>
 </html>
-
-<a href="https://wa.me/919962899084" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<a href="#" class="cart-float" id="cartBtn" aria-label="Open cart">🛒<span class="cart-count" id="cartCount">0</span></a>
-<div class="cart-modal" id="cartModal" aria-hidden="true">
-  <h3>Your Cart</h3>
-  <div id="cartItems"></div>
-  <div class="cart-actions">
-    <button id="clearCart">Clear</button>
-    <button id="checkout">Checkout via WhatsApp</button>
-  </div>
-</div>
-<script src="assets/cart.js"></script>
-<div id="toast" role="status" aria-live="polite"></div>
