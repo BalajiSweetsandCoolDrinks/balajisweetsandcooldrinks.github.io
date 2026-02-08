@@ -88,9 +88,9 @@
             background-color: #f8f3e8;
             padding: 10px 20px;
             border-bottom: 2px solid #e0d2b5;
-            position: static;
+            position: relative;
             top: 0;
-            z-index: 1000;
+            z-index: 1001;
         }
 
         nav {
@@ -458,10 +458,17 @@
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const sideNav = document.getElementById('sideNav');
+        const body = document.body;
 
         // Toggle mobile drawer
         menuBtn.addEventListener('click', (e) => {
             sideNav.classList.toggle('active');
+            // Prevent body scroll when menu is open
+            if (sideNav.classList.contains('active')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
             e.stopPropagation();
         });
 
@@ -469,6 +476,7 @@
         document.addEventListener('click', (e) => {
             if (!sideNav.contains(e.target) && sideNav.classList.contains('active')) {
                 sideNav.classList.remove('active');
+                body.style.overflow = '';
             }
         });
 
@@ -477,12 +485,14 @@
         if (closeNavBtn) {
             closeNavBtn.addEventListener('click', (e) => {
                 sideNav.classList.remove('active');
+                body.style.overflow = '';
                 e.stopPropagation();
             });
             closeNavBtn.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
                     sideNav.classList.remove('active');
+                    body.style.overflow = '';
                 }
             });
         }
