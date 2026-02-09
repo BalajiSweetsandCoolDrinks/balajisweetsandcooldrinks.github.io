@@ -20,7 +20,7 @@
         body {
             /* Watermark image path: replace with your file if needed */
             --watermark-image: url('images/background.jpg');
-            --watermark-opacity: 0.15;
+            --watermark-opacity: 0.45;
             /* adjust to taste */
 
             background-color: #fffdf5;
@@ -88,9 +88,9 @@
             background-color: #f8f3e8;
             padding: 10px 20px;
             border-bottom: 2px solid #e0d2b5;
-            position: static;
+            position: relative;
             top: 0;
-            z-index: 1000;
+            z-index: 1001;
         }
 
         nav {
@@ -130,11 +130,11 @@
 
         .nav-logo-text {
             font-family: 'Great Vibes', cursive;
-            font-size: 32px;
+            font-size: 40px;
             font-weight: bold;
             color: #8b2d1f;
             white-space: nowrap;
-            word-spacing: 9px; /* increased spacing between words */
+            word-spacing: 8px; /* increased spacing between words */
         }
 
         /* Hamburger Menu Icon */
@@ -346,6 +346,7 @@
         }
     </style>
     <link rel="stylesheet" href="assets/cart.css">
+    <link rel="stylesheet" href="assets/responsive.css">
 </head>
 
 <body>
@@ -412,38 +413,38 @@
 
         <h2 class="section-title">Flavours for Every Moment</h2>
         <div class="grid-layout">
-            <div class="info-card">
-                <img src="images/motichoor-laddoo.jpg" alt="Indian Sweets">
-                <h3>SIGNATURE SWEETS</h3>
-            </div>
-            <div class="info-card">
-                <img src="images/indian-sweets.jpg" alt="Indian Sweets">
-                <h3>INDIAN SWEETS</h3>
-            </div>
-            <div class="info-card">
-                <img src="images/sugar-free.jpg" alt="Indian Sweets">
+            <a class="info-card" href="kaju.variety.html">
+                <img src="images/kaju-variety.jpg" alt="Kaju Variety">
+                <h3>KAJU VARIETY</h3>
+            </a>
+            <a class="info-card" href="kalakand.html">
+                <img src="images/kalakand.jpg" alt="Kalakand">
+                <h3>KALAKAND</h3>
+            </a>
+            <a class="info-card" href="sugarfree.html">
+                <img src="images/sugar-free.jpg" alt="Sugar Free">
                 <h3>SUGAR FREE</h3>
-            </div>
-            <div class="info-card">
-                <img src="images/namkeen.jpg" alt="Indian Sweets">
+            </a>
+            <a class="info-card" href="namkeen.html">
+                <img src="images/namkeen.jpg" alt="Namkeen">
                 <h3>NAMKEEN</h3>
-            </div>
-            <div class="info-card">
-                <img src="images/bengali-sweets.jpg" alt="Indian Sweets">
+            </a>
+            <a class="info-card" href="bengali-sweets.html">
+                <img src="images/bengali-sweets.jpg" alt="Bengali Sweets">
                 <h3>BENGALI SWEETS</h3>
-            </div>
-            <div class="info-card">
-                <img src="images/snacks.jpg" alt="Sugar Free Sweets">
+            </a>
+            <a class="info-card" href="snacks.html">
+                <img src="images/snacks.jpg" alt="Snacks">
                 <h3>SNACKS</h3>
-            </div>
-            <div class="info-card">
-                <img src="images/dry-fruits.jpg" alt="Namkeen Snacks">
+            </a>
+            <a class="info-card" href="dry-fruits.html">
+                <img src="images/dry-fruits.jpg" alt="Dry Fruits">
                 <h3>DRY FRUITS</h3>
-            </div>
-            <div class="info-card">
+            </a>
+            <a class="info-card" href="soft-drinks.html">
                 <img src="images/cool-drinks.jpg" alt="Cool Drinks">
                 <h3>COOL DRINKS</h3>
-            </div>
+            </a>
         </div>
     </main>
 
@@ -457,10 +458,17 @@
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const sideNav = document.getElementById('sideNav');
+        const body = document.body;
 
         // Toggle mobile drawer
         menuBtn.addEventListener('click', (e) => {
             sideNav.classList.toggle('active');
+            // Prevent body scroll when menu is open
+            if (sideNav.classList.contains('active')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
             e.stopPropagation();
         });
 
@@ -468,6 +476,7 @@
         document.addEventListener('click', (e) => {
             if (!sideNav.contains(e.target) && sideNav.classList.contains('active')) {
                 sideNav.classList.remove('active');
+                body.style.overflow = '';
             }
         });
 
@@ -476,12 +485,14 @@
         if (closeNavBtn) {
             closeNavBtn.addEventListener('click', (e) => {
                 sideNav.classList.remove('active');
+                body.style.overflow = '';
                 e.stopPropagation();
             });
             closeNavBtn.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
                     sideNav.classList.remove('active');
+                    body.style.overflow = '';
                 }
             });
         }

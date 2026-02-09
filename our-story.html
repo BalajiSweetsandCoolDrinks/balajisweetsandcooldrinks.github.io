@@ -6,7 +6,44 @@
   <title>Our Story - Balaji Sweets and Cool Drinks</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Georgia, serif; background: #fffdf5; color: #7a2d1d; margin:0; }
+    body {
+            /* Watermark image path: replace with your file if needed */
+            --watermark-image: url('images/our-story.jpg');
+            --watermark-opacity: 0.25;
+            /* adjust to taste */
+
+            font-family: Georgia, serif;
+            background-color: #fffdf5;
+            color: #7a2d1d;
+            margin: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Subtle watermark layer behind the content */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            /* top/right/bottom/left: 0 */
+            background-image: var(--watermark-image);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: var(--watermark-opacity);
+            z-index: -1;
+            pointer-events: none;
+            filter: saturate(0.9) brightness(1.02);
+            transform: scale(1.02);
+        }
+
+        /* Reduce watermark intensity on small screens */
+        @media (max-width: 600px) {
+            body::before {
+                opacity: calc(var(--watermark-opacity) * 0.5);
+                background-size: cover;
+            }
+        }
     
     header { background: #f8f3e8; padding: 20px; border-bottom: 2px solid #e0d2b5; }
     .container { max-width: 900px; margin: 36px auto; padding: 20px; }
@@ -19,6 +56,7 @@
     @media (max-width:600px){ h1{ font-size:36px;} .container{ padding:12px; } }
   </style>
   <link rel="stylesheet" href="assets/cart.css">
+  <link rel="stylesheet" href="assets/responsive.css">
 </head>
 <body>
   <header>
