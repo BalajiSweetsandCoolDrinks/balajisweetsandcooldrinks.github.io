@@ -1,101 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Contact - Balaji Sweets and Cool Drinks</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Georgia, serif;
-            background: #fffdf5;
-            color: #7a2d1d;
-            margin: 0;
-            font-variant-numeric: tabular-nums;
-            /* 🔹 FIX: straight numbers */
+        /* CSS Variables for Easy Theming */
+        :root {
+            /* Rich Warm Colors - Indian Sweets Inspired */
+            --primary: #c45a3f;
+            --primary-dark: #a04535;
+            --primary-light: #d97a5f;
+            --secondary: #f5e6d3;
+            --accent: #d4a017;
+            --accent-light: #e8b84a;
+            
+            /* Neutrals */
+            --dark: #3d2814;
+            --dark-light: #5c4033;
+            --light: #fffdf8;
+            --light-gray: #f8f5f0;
+            --white: #ffffff;
+            
+            /* Gradients */
+            --primary-gradient: linear-gradient(135deg, #c45a3f 0%, #a04535 100%);
+            --accent-gradient: linear-gradient(135deg, #d4a017 0%, #b8860b 100%);
+            --soft-gradient: linear-gradient(180deg, #fff 0%, var(--secondary) 100%);
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(196, 90, 63, 0.08);
+            --shadow-md: 0 4px 20px rgba(196, 90, 63, 0.12);
+            --shadow-lg: 0 8px 40px rgba(196, 90, 63, 0.16);
+            --shadow-hover: 0 12px 50px rgba(196, 90, 63, 0.22);
+            
+            /* Transitions */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        header {
-            background: #f8f3e8;
-            padding: 20px;
-            border-bottom: 2px solid #e0d2b5;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', Georgia, serif;
+            background-color: var(--light);
+            color: var(--dark-light);
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.7;
+            font-variant-numeric: tabular-nums;
+        }
+
+        header { 
+            background: var(--soft-gradient);
+            padding: 15px 20px; 
+            border-bottom: 3px solid var(--accent);
+            box-shadow: var(--shadow-sm);
+        }
+
+        header .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 28px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        header a {
+            text-decoration: none;
+            color: var(--dark-light);
+            margin-left: 18px;
+            font-weight: 500;
+            padding: 10px 18px;
+            border-radius: 25px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        header a::before {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        header a:hover {
+            color: var(--primary);
+            background: rgba(196, 90, 63, 0.08);
+        }
+
+        header a:hover::before {
+            width: 60%;
         }
 
         .container {
-            max-width: 900px;
-            margin: 36px auto;
-            padding: 20px;
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 60px 25px;
         }
 
         h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 40px;
-            color: #8b2d1f;
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 45px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
         }
 
         .card {
-            background: #f8f3e8;
-            border: 2px solid #e0d2b5;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            background: var(--soft-gradient);
+            border: 2px solid rgba(196, 90, 63, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--accent-gradient);
         }
 
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 24px;
         }
 
         .contact-item {
-            padding: 12px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 14px;
+            transition: var(--transition);
+            border: 1px solid rgba(196, 90, 63, 0.08);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+            border-color: rgba(196, 90, 63, 0.2);
         }
 
         .label {
-            font-weight: 700;
-            color: #4a3a2f;
+            font-weight: 600;
+            color: var(--primary);
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            font-family: 'Playfair Display', serif;
         }
 
         .address-lines div {
             margin-bottom: 8px;
+            color: var(--dark-light);
+            font-size: 15px;
         }
 
         .back {
             display: inline-block;
-            margin-top: 20px;
-            color: #8b2d1f;
+            margin-top: 35px;
+            padding: 15px 40px;
+            background: var(--primary-gradient);
+            color: #ffffff;
             text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
-        
 
-        @media (max-width:700px) {
+        .back:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            width: 62px;
+            height: 62px;
+            bottom: 25px;
+            right: 100px;
+            background: linear-gradient(135deg, #25D366 0%, #1FB855 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        /* Floating cart */
+        .cart-float {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            z-index: 1100;
+            text-decoration: none;
+            font-size: 26px;
+            transition: var(--transition);
+        }
+
+        .cart-float:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent);
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
             .grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
 
             h1 {
-                font-size: 34px;
+                font-size: 36px;
+            }
+
+            .card {
+                padding: 28px;
+            }
+
+            .container {
+                padding: 45px 18px;
+            }
+
+            header .logo {
+                font-size: 24px;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                right: 75px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 30px;
+            }
+
+            .contact-item {
+                padding: 16px;
             }
         }
     </style>
     <link rel="stylesheet" href="assets/cart.css">
     <link rel="stylesheet" href="assets/responsive.css">
 </head>
-
 <body>
-
     <header>
-        <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
-            <div style="font-family:'Great Vibes',cursive;font-size:28px;color:#8b2d1f;">
-                Balaji Sweets and Cool Drinks
-            </div>
+        <div class="wrap">
+            <div class="logo">Balaji Sweets and Cool Drinks</div>
             <nav>
-                <a href="index.html" style="text-decoration:none;color:#4a3a2f;margin-left:18px;">Home</a>
+                <a href="index.html">Home</a>
             </nav>
         </div>
     </header>
@@ -126,7 +367,7 @@
                 </div>
             </div>
 
-            <div class="contact-item" style="margin-top:18px;">
+            <div class="contact-item" style="margin-top: 24px;">
                 <div class="label">Address</div>
                 <div class="address-lines">
                     <div>Beside Gangamma Temple</div>
@@ -137,26 +378,26 @@
                 </div>
             </div>
 
-            <a class="back" href="index.html">← Back to Home</a>
+            <a class="back" href="index.html">Back to Home</a>
         </div>
     </main>
 
-</body>
+    <a href="https://wa.me/919962899084" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
 
-    </html>
-
-<a href="https://wa.me/919962899084" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<a href="#" class="cart-float" id="cartBtn" aria-label="Open cart">🛒<span class="cart-count" id="cartCount">0</span></a>
-<div class="cart-modal" id="cartModal" aria-hidden="true">
-    <h3>Your Cart</h3>
-    <div id="cartItems"></div>
-    <div class="cart-actions">
-        <button id="clearCart">Clear</button>
-        <button id="checkout">Checkout via WhatsApp</button>
+    <a href="#" class="cart-float" id="cartBtn" aria-label="Open cart">🛒<span class="cart-count" id="cartCount">0</span></a>
+    <div class="cart-modal" id="cartModal" aria-hidden="true">
+        <h3>Your Cart</h3>
+        <div id="cartItems"></div>
+        <div class="cart-actions">
+            <button id="clearCart">Clear</button>
+            <button id="checkout">Checkout via WhatsApp</button>
+        </div>
     </div>
-</div>
-<script src="assets/cart.js"></script>
-<div id="toast" role="status" aria-live="polite"></div>
+    <script src="assets/cart.js"></script>
+    <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
