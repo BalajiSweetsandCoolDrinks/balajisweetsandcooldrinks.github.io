@@ -686,6 +686,24 @@
     </a>
 
     <script>
+        // Hide link URL in status bar on hover
+        document.querySelectorAll('.info-card a').forEach(link => {
+            link.addEventListener('mouseover', function(e) {
+                // Override the status bar by preventing default
+                try {
+                    this.blur();
+                } catch(err) {}
+            });
+        });
+
+        // Navigate without showing URL in status bar
+        document.querySelectorAll('.info-card a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = this.getAttribute('href');
+            });
+        });
+
         const menuBtn = document.getElementById('menuBtn');
         const sideNav = document.getElementById('sideNav');
 
