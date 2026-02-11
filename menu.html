@@ -146,9 +146,10 @@
         }
 
         .container {
-            max-width: 1250px;
-            margin: 0 auto;
-            padding: 60px 20px;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 60px 0;
         }
 
         h1 {
@@ -162,9 +163,10 @@
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 28px;
-            margin-bottom: 50px;
+            width: 100%;
+            margin: 0;
         }
 
         .menu-item {
@@ -550,15 +552,22 @@
         /* Responsive */
         @media (max-width: 1200px) {
             .menu-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 gap: 24px;
             }
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
+            .menu-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 22px;
+            }
+        }
+
+        @media (max-width: 768px) {
             .menu-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 22px;
+                gap: 18px;
             }
         }
 
@@ -808,7 +817,10 @@
 </script>
 
         <!-- Cart Page Link -->
-        <a href="cart.html" class="cart-float" aria-label="Open cart">🛒<span class="cart-count" id="cartCount">0</span></a>
+        <a href="cart.html" class="cart-float" aria-label="Open cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <span class="cart-count" id="cartCount">0</span>
+        </a>
         
         <script src="assets/cart.js"></script>
 <div id="toast" role="status" aria-live="polite"></div>

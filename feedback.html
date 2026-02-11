@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feedback - Balaji Sweets and Cool Drinks and Cool Drinks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background: #fffdf5;
+            color: #7a2d1d;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Watermark Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url('images/background.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: -1;
+            filter: saturate(0.9) brightness(1.02);
+        }
+
+        @media (max-width: 600px) {
+            body::before {
+                opacity: 0.08;
+            }
+        }
+
+        header {
+            background: #f8f3e8;
+            padding: 20px;
+            border-bottom: 2px solid #e0d2b5;
+        }
+
+        .header-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 28px;
+            color: #8b2d1f;
+        }
+
+        .continue-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #8b2d1f;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .continue-link:hover {
+            background: #7a2518;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 30px 20px;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            color: #8b2d1f;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #4a3a2f;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .feedback-card {
+            background: #f8f3e8;
+            border: 2px solid #e0d2b5;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #8b2d1f;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e0d2b5;
+            border-radius: 10px;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            background: #fff;
+            color: #7a2d1d;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8b2d1f;
+            box-shadow: 0 0 0 3px rgba(139, 45, 31, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .feedback-type {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .feedback-type label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: #fff;
+            border: 2px solid #e0d2b5;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: normal;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .feedback-type input[type="radio"] {
+            accent-color: #8b2d1f;
+        }
+
+        .feedback-type label:hover {
+            border-color: #8b2d1f;
+            background: #fff5eb;
+        }
+
+        .feedback-type input[type="radio"]:checked + span {
+            color: #8b2d1f;
+            font-weight: bold;
+        }
+
+        .rating-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .rating-label {
+            font-size: 14px;
+            color: #4a3a2f;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 4px;
+        }
+
+        .star-rating span {
+            font-size: 28px;
+            color: #ddd;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .star-rating span.active {
+            color: #FFD700;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: #8b2d1f;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-family: Georgia, serif;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #7a2518;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 45, 31, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .success-message h2 {
+            color: #8b2d1f;
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .success-message p {
+            color: #4a3a2f;
+            font-size: 16px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #8b2d1f;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .header-wrap {
+                justify-content: center;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .feedback-card {
+                padding: 20px;
+            }
+
+            .rating-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/cart.css">
+    <link rel="stylesheet" href="assets/responsive.css">
+</head>
+<body>
+
+<header>
+    <div class="header-wrap">
+        <div class="logo">Balaji Sweets and Cool Drinks and Cool Drinks</div>
+        <a href="index.html" class="continue-link">Home</a>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Share Your Feedback</h1>
+    <p class="subtitle">Help us serve you better by sharing your experience</p>
+
+    <div class="feedback-card">
+        <form id="feedbackForm" onsubmit="submitFeedback(event)">
+            <!-- Customer Info -->
+            <div class="form-group">
+                <label for="customerName">Your Name (Optional)</label>
+                <input type="text" id="customerName" placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label for="contactInfo">Phone or Email (Optional)</label>
+                <input type="text" id="contactInfo" placeholder="We'll contact you if needed">
+            </div>
+
+            <!-- Feedback Type -->
+            <div class="form-group">
+                <label>Feedback About</label>
+                <div class="feedback-type">
+                    <label>
+                        <input type="radio" name="feedbackType" value="sweets" checked>
+                        <span>Sweets Quality</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="feedbackType" value="website">
+                        <span>Website Usability</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="feedbackType" value="service">
+                        <span>Service / Staff</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="feedbackType" value="other">
+                        <span>Other</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Product Rating (if sweets) -->
+            <div class="form-group" id="productRatingGroup">
+                <label>Rate Our Sweets</label>
+                <div class="rating-group">
+                    <div class="rating-row">
+                        <span class="rating-label">Taste & Freshness</span>
+                        <div class="star-rating" data-rating="tasteRating">
+                            <span data-value="1">★</span>
+                            <span data-value="2">★</span>
+                            <span data-value="3">★</span>
+                            <span data-value="4">★</span>
+                            <span data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">Packaging & Presentation</span>
+                        <div class="star-rating" data-rating="packRating">
+                            <span data-value="1">★</span>
+                            <span data-value="2">★</span>
+                            <span data-value="3">★</span>
+                            <span data-value="4">★</span>
+                            <span data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">Value for Money</span>
+                        <div class="star-rating" data-rating="valueRating">
+                            <span data-value="1">★</span>
+                            <span data-value="2">★</span>
+                            <span data-value="3">★</span>
+                            <span data-value="4">★</span>
+                            <span data-value="5">★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Website Rating (if website) -->
+            <div class="form-group" id="websiteRatingGroup" style="display: none;">
+                <label>Rate Website Usability</label>
+                <div class="rating-group">
+                    <div class="rating-row">
+                        <span class="rating-label">Easy to Navigate</span>
+                        <div class="star-rating" data-rating="navRating">
+                            <span data-value="1">★</span>
+                            <span data-value="2">★</span>
+                            <span data-value="3">★</span>
+                            <span data-value="4">★</span>
+                            <span data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">Product Information</span>
+                        <div class="star-rating" data-rating="infoRating">
+                            <span data-value="1">★</span>
+                            <span data-value="2">★</span>
+                            <span data-value="3">★</span>
+                            <span data-value="4">★</span>
+                            <span data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">Overall Experience</span>
+                        <div class="star-rating" data-rating="expRating">
+                            <span data-value="1">★</span>
+                            <span data-value="2">★</span>
+                            <span data-value="3">★</span>
+                            <span data-value="4">★</span>
+                            <span data-value="5">★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="form-group">
+                <label for="comments">Your Comments & Suggestions</label>
+                <textarea id="comments" placeholder="Tell us more about your experience or suggestions for improvement..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <h2>Thank You!</h2>
+            <p>Your feedback has been received. We appreciate you taking the time to help us improve!</p>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </div>
+</main>
+
+<script>
+    // Initialize star ratings with simple click handler
+    document.querySelectorAll('.star-rating').forEach(rating => {
+        const stars = rating.querySelectorAll('span');
+        
+        stars.forEach((star) => {
+            star.addEventListener('click', function() {
+                const value = parseInt(this.dataset.value);
+                // Set stars 1 to value as active
+                stars.forEach((s, i) => {
+                    if (i < value) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+                // Store the rating value
+                rating.dataset.value = value;
+            });
+        });
+    });
+
+    // Toggle rating groups based on feedback type
+    document.querySelectorAll('input[name="feedbackType"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const productGroup = document.getElementById('productRatingGroup');
+            const websiteGroup = document.getElementById('websiteRatingGroup');
+            
+            if (this.value === 'sweets') {
+                productGroup.style.display = 'block';
+                websiteGroup.style.display = 'none';
+            } else if (this.value === 'website') {
+                productGroup.style.display = 'none';
+                websiteGroup.style.display = 'block';
+            } else {
+                productGroup.style.display = 'none';
+                websiteGroup.style.display = 'none';
+            }
+        });
+    });
+
+    function submitFeedback(e) {
+        e.preventDefault();
+        
+        const feedbackType = document.querySelector('input[name="feedbackType"]:checked').value;
+        const customerName = document.getElementById('customerName').value;
+        const contactInfo = document.getElementById('contactInfo').value;
+        const comments = document.getElementById('comments').value;
+        
+        // Collect ratings from star elements
+        let ratings = {};
+        if (feedbackType === 'sweets') {
+            const tasteRating = document.querySelector('[data-rating="tasteRating"]');
+            const packRating = document.querySelector('[data-rating="packRating"]');
+            const valueRating = document.querySelector('[data-rating="valueRating"]');
+            ratings.taste = tasteRating?.dataset.value || '0';
+            ratings.packaging = packRating?.dataset.value || '0';
+            ratings.value = valueRating?.dataset.value || '0';
+        } else if (feedbackType === 'website') {
+            const navRating = document.querySelector('[data-rating="navRating"]');
+            const infoRating = document.querySelector('[data-rating="infoRating"]');
+            const expRating = document.querySelector('[data-rating="expRating"]');
+            ratings.navigation = navRating?.dataset.value || '0';
+            ratings.info = infoRating?.dataset.value || '0';
+            ratings.experience = expRating?.dataset.value || '0';
+        }
+        
+        // Format WhatsApp message
+        const typeLabels = {
+            sweets: 'Sweets Quality',
+            website: 'Website Usability',
+            service: 'Service / Staff',
+            other: 'Other'
+        };
+        
+        let message = `*Feedback - Balaji Sweets and Cool Drinks*\n\n`;
+        message += `*Type:* ${typeLabels[feedbackType]}\n`;
+        if (customerName) message += `*Name:* ${customerName}\n`;
+        if (contactInfo) message += `*Contact:* ${contactInfo}\n`;
+        
+        if (feedbackType === 'sweets') {
+            message += `\n*Taste & Freshness:* ${ratings.taste}/5\n`;
+            message += `*Packaging:* ${ratings.packaging}/5\n`;
+            message += `*Value for Money:* ${ratings.value}/5\n`;
+        } else if (feedbackType === 'website') {
+            message += `\n*Easy to Navigate:* ${ratings.navigation}/5\n`;
+            message += `*Product Info:* ${ratings.info}/5\n`;
+            message += `*Overall Experience:* ${ratings.experience}/5\n`;
+        }
+        
+        if (comments) {
+            message += `\n*Comments:* ${comments}`;
+        }
+        
+        // Send via WhatsApp
+        const whatsappNumber = '+919962899084';
+        const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+        
+        window.open(whatsappUrl, '_blank');
+        
+        // Show success message
+        document.getElementById('feedbackForm').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+    }
+</script>
+
+<a href="#" class="cart-float" id="cartBtn" aria-label="Open cart">🛒<span class="cart-count" id="cartCount">0</span></a>
+<div class="cart-modal" id="cartModal" aria-hidden="true">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+    <div class="cart-actions">
+        <button id="clearCart">Clear</button>
+        <button id="checkout">Checkout via WhatsApp</button>
+    </div>
+</div>
+<script src="assets/cart.js"></script>
+<div id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>

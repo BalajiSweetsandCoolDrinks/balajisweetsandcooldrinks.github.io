@@ -8,7 +8,9 @@ A responsive e-commerce website for Balaji Sweets and Cool Drinks, featuring pro
 BalajiSweetsandCoolDrinks.github.io/
 ├── index.html               # Main homepage with product categories
 ├── menu.html               # Product menu with item selection
+├── cart.html               # Standalone shopping cart page
 ├── our-story.html          # Company story page
+├── feedback.html           # Customer feedback form
 ├── contact.html            # Contact information page
 ├── kalakand.html           # Kalakand product page
 ├── bengali-sweets.html     # Bengali sweets collection
@@ -65,6 +67,17 @@ body::before {
 - **Quantity Control**: Increment/decrement buttons
 - **Price Calculation**: Automatically calculates based on weight
 - **Persistent Storage**: Uses localStorage to save cart data
+- **Multiple Quantities**: Same product with different sizes are stored as separate entries
+
+### Standalone Cart Page (cart.html)
+- Dedicated cart page with product images displayed alongside items
+- Header with "Balaji Sweets and Cool Drinks" logo and "Continue Shopping" button
+- Cart items show product image, name, weight, quantity, and price
+- Quantity adjustment buttons (+/-) for each item
+- Remove button for each cart item
+- Clear cart functionality
+- Total price calculation
+- WhatsApp checkout button with pre-formatted order message
 
 ### WhatsApp Integration
 - Direct checkout via WhatsApp message
@@ -72,8 +85,9 @@ body::before {
 - Phone number: +919962899084
 
 ### Cart UI Components
-- Floating cart button with item count
-- Slide-out cart modal
+- Floating cart button with item count (links to cart.html)
+- Standalone cart page with product images
+- Quantity adjustment and remove item functionality
 - Clear cart functionality
 - Toast notifications for actions
 
@@ -97,12 +111,32 @@ body::before {
 - Product category cards with images
 - Grid layout showing all categories
 - Floating WhatsApp button
+- Cart button links to cart.html
 
 ### Menu Page (menu.html)
 - Product grid with images
 - Click-to-open product modal
 - Size and quantity selection
 - Add to cart functionality
+- Cart button links to cart.html
+
+### Cart Page (cart.html)
+- Standalone page displaying all cart items with images
+- Quantity adjustment (+/-) for each item
+- Remove item button for each cart entry
+- Clear cart functionality
+- Total price calculation
+- WhatsApp checkout button
+
+### Feedback Page (feedback.html)
+- Customer feedback form for sweets quality and website usability
+- Two feedback categories: Sweets Quality or Website Usability
+- Star ratings for different aspects:
+  - Sweets: Taste & Freshness, Packaging, Value for Money
+  - Website: Easy to Navigate, Product Information, Overall Experience
+- Optional name and contact fields
+- Comments and suggestions textarea
+- Submit via WhatsApp message to +919962899084
 
 ### Our Story (our-story.html)
 - Company history and values

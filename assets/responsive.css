@@ -1,6 +1,5 @@
 /* Responsive utility overrides for all pages */
 :root{
-  --container-max:1200px;
   --accent: #8b2d1f;
   --cream: #fffdf5;
 }
@@ -8,17 +7,17 @@
 /* Make images and svgs fluid */
 img, svg { max-width:100%; height:auto; display:block; }
 
-/* Containers */
-.container{ width:100%; max-width:var(--container-max); margin: 0 auto; padding: 0 20px; box-sizing:border-box }
+/* Containers - full width for main content */
+.container{ width:100%; max-width:100%; margin: 0; padding: 0 20px; box-sizing:border-box }
 
 /* Responsive typography */
 h1{ font-size: clamp(26px, 6vw, 44px); }
 h2{ font-size: clamp(20px, 4.5vw, 34px); }
 .section-title{ font-size: clamp(20px,4.5vw,36px);} 
 
-/* Fluid grids */
-.grid-layout{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-.menu-grid{ grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 18px }
+/* Fluid grids - fixed columns for even distribution */
+.grid-layout{ grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; }
+.menu-grid{ grid-template-columns: repeat(4, 1fr); gap: 18px; width: 100%; }
 
 /* Centralized menu thumbnail sizing: prefer aspect-ratio for consistent visible sizes while remaining responsive. */
 .menu-item img{
@@ -52,9 +51,14 @@ nav { align-items:center }
   header nav { height: auto }
 }
 
+@media (max-width: 1024px){
+  .grid-layout{ grid-template-columns: repeat(3, 1fr); }
+  .menu-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
 @media (max-width: 768px){
-  .grid-layout{ grid-template-columns: 1fr }
-  .menu-grid{ grid-template-columns: 1fr }
+  .grid-layout{ grid-template-columns: repeat(2, 1fr); }
+  .menu-grid{ grid-template-columns: repeat(2, 1fr); }
   .container{ padding: 20px }
   .site-logo{ height: 50px }
   .nav-logo-text{ text-align:center }
