@@ -3,60 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Balaji Sweets and Cool Drinks</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Assorted Sweets - Balaji Sweets and Cool Drinks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables for Easy Theming */
         :root {
-            /* Rich Warm Colors - Indian Sweets Inspired */
             --primary: #c45a3f;
             --primary-dark: #a04535;
-            --primary-light: #d97a5f;
             --secondary: #f5e6d3;
             --accent: #d4a017;
-            --accent-light: #e8b84a;
-            
-            /* Neutrals */
-            --dark: #3d2814;
             --dark-light: #5c4033;
             --light: #fffdf8;
-            --light-gray: #f8f5f0;
             --white: #ffffff;
-            
-            /* Gradients */
             --primary-gradient: linear-gradient(135deg, #c45a3f 0%, #a04535 100%);
             --accent-gradient: linear-gradient(135deg, #d4a017 0%, #b8860b 100%);
             --soft-gradient: linear-gradient(180deg, #fff 0%, var(--secondary) 100%);
-            
-            /* Shadows */
-            --shadow-sm: 0 2px 8px rgba(196, 90, 63, 0.08);
-            --shadow-md: 0 4px 20px rgba(196, 90, 63, 0.12);
-            --shadow-lg: 0 8px 40px rgba(196, 90, 63, 0.16);
-            --shadow-hover: 0 12px 50px rgba(196, 90, 63, 0.22);
-            
-            /* Transitions */
+            --shadow-sm: 0 2px 8px rgba(196, 90, 63, 0.1);
+            --shadow-md: 0 4px 20px rgba(196, 90, 63, 0.15);
+            --shadow-lg: 0 8px 40px rgba(196, 90, 63, 0.2);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Watermark */
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            --watermark-image: url('images/menu.jpg');
-            --watermark-opacity: 0.35;
-
             font-family: 'Poppins', Georgia, serif;
             background-color: var(--light);
             color: var(--dark-light);
-            overflow-x: hidden;
+            min-height: 100vh;
             position: relative;
-            line-height: 1.6;
+            overflow-x: hidden;
+            line-height: 1.7;
         }
-
+        
         body::before {
             content: "";
             position: fixed;
@@ -64,40 +42,40 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: var(--watermark-image);
+            background-image: url('images/indian-sweets.jpg');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
-            opacity: var(--watermark-opacity);
+            opacity: 0.25;
             z-index: -1;
-            filter: saturate(0.85) brightness(1.02);
+            filter: saturate(0.85);
             will-change: opacity;
         }
-
+        
         @media (max-width: 768px) {
             body::before {
-                opacity: calc(var(--watermark-opacity) * 0.6);
+                opacity: 0.18;
                 background-size: cover;
                 background-position: center center;
             }
         }
-
+        
         @media (max-width: 480px) {
             body::before {
-                opacity: calc(var(--watermark-opacity) * 0.5);
+                opacity: 0.15;
             }
         }
-
+        
         header { 
             background: var(--soft-gradient);
             padding: 15px 20px; 
             border-bottom: 3px solid var(--accent);
             box-shadow: var(--shadow-sm);
         }
-
+        
         header .wrap {
             max-width: 1200px;
             margin: 0 auto;
@@ -105,14 +83,14 @@
             justify-content: space-between;
             align-items: center;
         }
-
+        
         header .logo {
             font-family: 'Playfair Display', serif;
             font-size: 28px;
             color: var(--primary);
             font-weight: 600;
         }
-
+        
         header a {
             text-decoration: none;
             color: var(--dark-light);
@@ -123,7 +101,7 @@
             transition: var(--transition);
             position: relative;
         }
-
+        
         header a::before {
             content: '';
             position: absolute;
@@ -135,23 +113,23 @@
             background: var(--primary);
             transition: var(--transition);
         }
-
+        
         header a:hover {
             color: var(--primary);
             background: rgba(196, 90, 63, 0.08);
         }
-
+        
         header a:hover::before {
             width: 60%;
         }
-
+        
         .container {
             width: 100%;
-            max-width: 100%;
-            margin: 0;
-            padding: 60px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
-
+        
         h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 58px;
@@ -160,15 +138,14 @@
             margin-bottom: 45px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-
+        
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 28px;
             width: 100%;
-            margin: 0;
         }
-
+        
         .menu-item {
             background: var(--soft-gradient);
             border: 2px solid rgba(196, 90, 63, 0.1);
@@ -184,7 +161,7 @@
             align-items: center;
             position: relative;
         }
-
+        
         .menu-item::before {
             content: '';
             position: absolute;
@@ -196,17 +173,17 @@
             transform: scaleX(0);
             transition: var(--transition);
         }
-
+        
         .menu-item:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
             border-color: rgba(196, 90, 63, 0.2);
         }
-
+        
         .menu-item:hover::before {
             transform: scaleX(1);
         }
-
+        
         .menu-item img {
             width: 100%;
             aspect-ratio: 1 / 1;
@@ -215,11 +192,11 @@
             margin-bottom: 18px;
             transition: var(--transition);
         }
-
+        
         .menu-item:hover img {
             transform: scale(1.05);
         }
-
+        
         .menu-title {
             margin-top: 5px;
             font-family: 'Playfair Display', serif;
@@ -229,16 +206,16 @@
             letter-spacing: 1px;
             margin-bottom: 8px;
         }
-
+        
         .menu-price {
             color: var(--dark-light);
             font-weight: 500;
             font-size: 15px;
         }
-
+        
         .back {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 40px;
             padding: 14px 35px;
             background: var(--primary-gradient);
             color: #ffffff;
@@ -251,12 +228,12 @@
             box-shadow: var(--shadow-md);
             text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
-
+        
         .back:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-hover);
         }
-
+        
         /* Floating cart */
         .cart-float {
             position: fixed;
@@ -276,12 +253,12 @@
             font-size: 26px;
             transition: var(--transition);
         }
-
+        
         .cart-float:hover {
             transform: scale(1.1);
             box-shadow: var(--shadow-hover);
         }
-
+        
         .cart-count {
             position: absolute;
             top: -5px;
@@ -297,7 +274,7 @@
             align-items: center;
             justify-content: center;
         }
-
+        
         .cart-modal {
             position: fixed;
             right: 25px;
@@ -313,14 +290,14 @@
             z-index: 1200;
             display: none;
         }
-
+        
         .cart-modal h3 {
             margin: 0 0 14px 0;
             color: var(--primary);
             font-family: 'Playfair Display', serif;
             font-size: 22px;
         }
-
+        
         .cart-item {
             display: flex;
             justify-content: space-between;
@@ -328,13 +305,13 @@
             border-bottom: 1px dashed rgba(196, 90, 63, 0.2);
             font-size: 14px;
         }
-
+        
         .cart-actions {
             margin-top: 14px;
             display: flex;
             gap: 10px;
         }
-
+        
         .cart-actions button {
             flex: 1;
             padding: 12px;
@@ -345,27 +322,27 @@
             transition: var(--transition);
             font-size: 14px;
         }
-
+        
         #clearCart {
             background: rgba(196, 90, 63, 0.08);
             color: var(--primary);
             border: 1px solid var(--primary) !important;
         }
-
+        
         #clearCart:hover {
             background: rgba(196, 90, 63, 0.15);
         }
-
+        
         #checkout {
             background: linear-gradient(135deg, #25D366 0%, #1FB855 100%);
             color: white;
         }
-
+        
         #checkout:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
-
+        
         /* Product Modal */
         .modal-overlay {
             display: none;
@@ -380,7 +357,7 @@
             align-items: center;
             padding: 20px;
         }
-
+        
         .product-modal {
             background: linear-gradient(180deg, #fff 0%, var(--secondary) 100%);
             width: 100%;
@@ -390,17 +367,17 @@
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
-
+        
         .product-modal img {
             width: 100%;
             height: 280px;
             object-fit: cover;
         }
-
+        
         .modal-body {
             padding: 28px;
         }
-
+        
         .close-modal {
             position: absolute;
             top: 15px;
@@ -418,40 +395,40 @@
             z-index: 10;
             transition: var(--transition);
         }
-
+        
         .close-modal:hover {
             background: rgba(0,0,0,0.7);
             transform: scale(1.1);
         }
-
+        
         .modal-body h2 {
             margin: 0 0 10px 0;
             color: var(--primary);
             font-family: 'Playfair Display', serif;
             font-size: 26px;
         }
-
+        
         .modal-price {
             font-size: 28px;
             font-weight: 700;
             color: var(--primary);
             margin: 12px 0 20px;
         }
-
+        
         .option-label {
             font-weight: 600;
             margin: 22px 0 12px;
             display: block;
-            color: var(--dark);
+            color: var(--dark-light);
             font-family: 'Playfair Display', serif;
         }
-
+        
         .size-container {
             display: flex;
             gap: 12px;
             margin-bottom: 22px;
         }
-
+        
         .size-btn {
             flex: 1;
             padding: 14px;
@@ -464,18 +441,18 @@
             transition: var(--transition);
             font-size: 14px;
         }
-
+        
         .size-btn:hover {
             border-color: var(--primary);
             background: rgba(196, 90, 63, 0.05);
         }
-
+        
         .size-btn.active {
             background: var(--primary-gradient);
             color: white;
             border-color: var(--primary);
         }
-
+        
         .action-row {
             display: flex;
             align-items: center;
@@ -483,7 +460,7 @@
             margin-top: 30px;
             gap: 15px;
         }
-
+        
         .qty-input {
             display: flex;
             align-items: center;
@@ -492,7 +469,7 @@
             background: var(--white);
             overflow: hidden;
         }
-
+        
         .qty-btn {
             width: 48px;
             height: 48px;
@@ -503,18 +480,18 @@
             color: var(--primary);
             transition: var(--transition);
         }
-
+        
         .qty-btn:hover {
             background: rgba(196, 90, 63, 0.08);
         }
-
+        
         #qtyVal {
             width: 48px;
             text-align: center;
             font-weight: 600;
             font-size: 16px;
         }
-
+        
         .add-btn {
             flex: 1;
             padding: 16px;
@@ -529,17 +506,17 @@
             transition: var(--transition);
             box-shadow: var(--shadow-md);
         }
-
+        
         .add-btn:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
         }
-
+        
         #toast {
             position: fixed;
             right: 25px;
             bottom: 180px;
-            background: var(--dark);
+            background: var(--dark-light);
             color: #fff;
             padding: 14px 20px;
             border-radius: 10px;
@@ -548,137 +525,101 @@
             display: none;
             font-weight: 500;
         }
-
+        
         /* Responsive */
-        @media (max-width: 1200px) {
-            .menu-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 24px;
-            }
-        }
-
         @media (max-width: 1024px) {
             .menu-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 22px;
             }
         }
-
+        
         @media (max-width: 768px) {
             .menu-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 18px;
             }
         }
-
+        
         @media (max-width: 600px) {
             .menu-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
                 margin-bottom: 30px;
             }
-
+        
             h1 {
                 font-size: 40px;
                 margin-bottom: 25px;
             }
-
+        
             .menu-item {
                 padding: 12px 10px;
                 border-radius: 12px;
             }
-
+        
             .menu-item img {
                 border-radius: 10px;
                 margin-bottom: 10px;
                 aspect-ratio: 4/3;
             }
-
+        
             .menu-title {
                 font-size: 13px;
                 margin-bottom: 6px;
             }
-
+        
             .menu-price {
                 font-size: 11px;
             }
-
+        
             header .logo {
                 font-size: 20px;
             }
-
+        
             .container {
                 padding: 25px 10px;
             }
-
+        
             .cart-modal {
                 width: calc(100% - 20px);
                 right: 10px;
                 bottom: 90px;
             }
         }
-
+        
         @media (max-width: 480px) {
             .menu-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
-
+        
             h1 {
                 font-size: 34px;
             }
-
+        
             .menu-item {
                 padding: 10px 8px;
                 border-radius: 10px;
             }
-
+        
             .menu-item img {
                 border-radius: 8px;
                 margin-bottom: 8px;
             }
-
+        
             .menu-title {
                 font-size: 12px;
                 margin-bottom: 4px;
             }
-
+        
             .menu-price {
                 font-size: 10px;
             }
-
+        
             .back {
                 padding: 10px 24px;
                 font-size: 13px;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .menu-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
-
-            .menu-item {
-                padding: 8px 6px;
-                border-radius: 8px;
-            }
-
-            .menu-item img {
-                border-radius: 6px;
-                margin-bottom: 6px;
-            }
-
-            .menu-title {
-                font-size: 11px;
-            }
-
-            .menu-price {
-                font-size: 9px;
-            }
-
-            h1 {
-                font-size: 28px;
             }
         }
     </style>
@@ -697,25 +638,14 @@
 </header>
 
 <main class="container">
-    <h1>Our Menu</h1>
+    <h1>Assorted Sweets</h1>
     <div class="menu-grid">
-        <div class="menu-item" onclick="openProduct('MOTICHOOR Ladoo', 200, 'images/motichoor-ladoo.jpg')">
-            <img src="images/motichoor-ladoo.jpg" alt="Motichoor Ladoo">
-            <div class="menu-title">MOTICHOOR LADOO</div>
-            <div class="menu-price">From ₹ 200</div>
-        </div>
-
-        <div class="menu-item" onclick="openProduct('KAJU KATLI', 500, 'images/kaju-variety.jpg')">
-            <img src="images/kaju-variety.jpg" alt="Kaju Katli">
-            <div class="menu-title">KAJU KATLI</div>
-            <div class="menu-price">From ₹ 500</div>
-        </div>
-
         <div class="menu-item" onclick="openProduct('ASSORTED SWEETS', 300, 'images/indian-sweets.jpg')">
             <img src="images/indian-sweets.jpg" alt="Assorted Sweets">
             <div class="menu-title">ASSORTED SWEETS</div>
             <div class="menu-price">From ₹ 300</div>
         </div>
+
     </div>
     <div style="text-align: center;">
         <a class="back" href="index.html">Back to Home</a>
@@ -816,13 +746,13 @@
     }
 </script>
 
-        <!-- Cart Page Link -->
-        <a href="cart.html" class="cart-float" aria-label="Open cart">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-            <span class="cart-count" id="cartCount">0</span>
-        </a>
-        
-        <script src="assets/cart.js"></script>
+<!-- Cart Page Link -->
+<a href="cart.html" class="cart-float" aria-label="Open cart">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+    <span class="cart-count" id="cartCount">0</span>
+</a>
+
+<script src="assets/cart.js"></script>
 <div id="toast" role="status" aria-live="polite"></div>
 
 </body>
