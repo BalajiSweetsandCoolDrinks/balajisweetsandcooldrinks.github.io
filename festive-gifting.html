@@ -6,95 +6,154 @@
     <title>Festive Gifting - Balaji Sweets and Cool Drinks</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #c45a3f;
+            --primary-dark: #a04535;
+            --secondary: #f5e6d3;
+            --accent: #d4a017;
+            --dark-light: #5c4033;
+            --light: #fffdf8;
+            --white: #ffffff;
+            --primary-gradient: linear-gradient(135deg, #c45a3f 0%, #a04535 100%);
+            --accent-gradient: linear-gradient(135deg, #d4a017 0%, #b8860b 100%);
+            --soft-gradient: linear-gradient(180deg, #fff 0%, var(--secondary) 100%);
+            --shadow-sm: 0 2px 8px rgba(196, 90, 63, 0.1);
+            --shadow-md: 0 4px 20px rgba(196, 90, 63, 0.15);
+            --shadow-lg: 0 8px 40px rgba(196, 90, 63, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            font-family: Georgia, serif;
-            background-color: #fffdf5;
-            color: #7a2d1d;
+            font-family: 'Poppins', Georgia, serif;
+            background-color: var(--light);
+            color: var(--dark-light);
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+            line-height: 1.7;
         }
         
-        /* Watermark background image - full page single image */
         body::before {
             content: "";
             position: fixed;
-            inset: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-image: url('images/indian-sweets.jpg');
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: center center;
             background-size: cover;
-            opacity: 0.2;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            opacity: 0.25;
             z-index: -1;
-            filter: saturate(0.8) brightness(1.1);
+            filter: saturate(0.85);
+            will-change: opacity;
         }
         
-        header { background: #f8f3e8; padding: 20px; border-bottom: 2px solid #e0d2b5; }
-        header .wrap { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
-        header .logo { font-family: 'Great Vibes', cursive; font-size: 28px; color: #8b2d1f; }
-        header a { text-decoration: none; color: #4a3a2f; margin-left: 18px; font-size: 14px; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; min-height: calc(100vh - 120px); display: flex; align-items: center; justify-content: center; }
+        @media (max-width: 768px) {
+            body::before {
+                opacity: 0.18;
+                background-size: cover;
+                background-position: center center;
+            }
+        }
         
-        /* Centered Coming Soon Box */
+        @media (max-width: 480px) {
+            body::before {
+                opacity: 0.15;
+            }
+        }
+        
+        header { 
+            background: var(--soft-gradient);
+            padding: 15px 20px; 
+            border-bottom: 3px solid var(--accent);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        header .wrap { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+        header .logo { font-family: 'Great Vibes', cursive; font-size: 28px; color: var(--primary); font-weight: 600; }
+        header a { text-decoration: none; color: var(--dark-light); margin-left: 18px; font-weight: 500; padding: 10px 18px; border-radius: 25px; transition: var(--transition); }
+        header a:hover { color: var(--primary); background: rgba(196, 90, 63, 0.08); }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 70px 20px; min-height: calc(100vh - 120px); display: flex; align-items: center; justify-content: center; }
+        
         .coming-soon-box {
-            max-width: 700px;
+            max-width: 650px;
             width: 100%;
-            background-color: rgba(255, 253, 245, 0.95);
-            border: 3px solid #e0d2b5;
+            background: var(--soft-gradient);
+            border: 2px solid rgba(196, 90, 63, 0.1);
             border-radius: 20px;
-            padding: 60px 40px;
+            padding: 55px 40px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(139, 45, 31, 0.2);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .coming-soon-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--accent-gradient);
         }
         
         .coming-soon-box h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 72px;
-            color: #8b2d1f;
+            font-size: 68px;
+            color: var(--primary);
             margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .coming-soon-box .subtitle {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            color: #4a3a2f;
+            font-size: 26px;
+            color: var(--dark-light);
             margin-bottom: 25px;
             font-style: italic;
         }
         
         .coming-soon-box .message {
-            font-size: 18px;
-            color: #7a2d1d;
+            font-size: 17px;
+            color: var(--dark-light);
             line-height: 1.8;
-            max-width: 450px;
+            max-width: 420px;
             margin: 0 auto 35px;
+            opacity: 0.9;
         }
         
         .back-btn {
             display: inline-block;
-            padding: 15px 45px;
-            background: #8b2d1f;
-            color: #fff;
+            padding: 15px 40px;
+            background: var(--primary-gradient);
+            color: #ffffff;
             text-decoration: none;
             border-radius: 30px;
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 15px;
+            font-weight: 500;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(139, 45, 31, 0.3);
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
         
         .back-btn:hover {
-            background: #a63d2a;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(139, 45, 31, 0.4);
+            box-shadow: var(--shadow-lg);
         }
         
         @media (max-width: 600px) {
-            .coming-soon-box { padding: 45px 25px; }
-            .coming-soon-box h1 { font-size: 52px; }
+            .coming-soon-box { padding: 40px 25px; }
+            .coming-soon-box h1 { font-size: 50px; }
             .coming-soon-box .subtitle { font-size: 22px; }
         }
     </style>
@@ -111,8 +170,8 @@
 <main class="container">
     <div class="coming-soon-box">
         <h1>Coming Soon</h1>
-        <p class="subtitle">Exquisite Festive Gifting Coming Soon!</p>
-        <p class="message">Beautiful gift boxes for your celebrations.<br>Stay tuned for the grand launch!</p>
+        <p class="subtitle">Festive Gifting Coming Soon!</p>
+        <p class="message">Beautiful gift boxes for every celebration.<br>Stay tuned for the grand launch!</p>
         <a href="index.html" class="back-btn">Back to Home</a>
     </div>
 </main>
