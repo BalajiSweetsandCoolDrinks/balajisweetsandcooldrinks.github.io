@@ -419,35 +419,69 @@
                 gap: 12px;
                 margin-bottom: 30px;
             }
-            
+
             .section-title {
                 font-size: 26px;
                 margin-bottom: 20px;
             }
-            
+
             .info-card {
                 padding: 12px 10px;
                 border-radius: 12px;
             }
-            
+
             .info-card h3 {
                 font-size: 13px;
                 margin-bottom: 6px;
             }
-            
+
             .info-card p {
                 font-size: 11px;
                 line-height: 1.4;
             }
-            
+
             .info-card img {
                 border-radius: 10px;
                 margin-bottom: 10px;
                 aspect-ratio: 4/3;
             }
-            
+
             .container {
                 padding: 25px 10px;
+            }
+
+            /* Navigation mobile fix - prevent title collision with hamburger */
+            .nav-logo-text {
+                font-size: clamp(10px, 3.5vw, 16px) !important;
+                white-space: normal !important;
+                max-width: 100%;
+                text-align: center;
+                line-height: 1.2;
+                padding: 0 5px;
+            }
+
+            nav {
+                height: auto;
+                min-height: 55px;
+                padding: 8px 10px;
+            }
+
+            .nav-column-center {
+                flex: 1;
+            }
+
+            .hamburger {
+                padding: 5px;
+                gap: 4px;
+            }
+
+            .hamburger span {
+                width: 22px;
+                height: 2.5px;
+            }
+
+            .site-logo {
+                height: 50px;
             }
         }
 
@@ -456,30 +490,48 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
-            
+
             .section-title {
                 font-size: 22px;
                 margin-bottom: 18px;
             }
-            
+
             .info-card {
                 padding: 10px 8px;
                 border-radius: 10px;
             }
-            
+
             .info-card img {
                 border-radius: 8px;
                 margin-bottom: 8px;
             }
-            
+
             .info-card h3 {
                 font-size: 12px;
                 margin-bottom: 4px;
             }
-            
+
             .info-card p {
                 font-size: 10px;
                 line-height: 1.3;
+            }
+
+            /* Additional mobile fix for very small screens */
+            .nav-logo-text {
+                font-size: clamp(9px, 3.2vw, 14px) !important;
+            }
+
+            .hamburger span {
+                width: 20px;
+                height: 2px;
+            }
+
+            .hamburger {
+                padding: 4px;
+            }
+
+            .site-logo {
+                height: 45px;
             }
         }
 
@@ -488,23 +540,33 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
             }
-            
+
             .info-card {
                 padding: 8px 6px;
                 border-radius: 8px;
             }
-            
+
             .info-card img {
                 border-radius: 6px;
                 margin-bottom: 6px;
             }
-            
+
             .info-card h3 {
                 font-size: 11px;
             }
-            
+
             .info-card p {
                 font-size: 9px;
+            }
+
+            /* Extra small screen title fix */
+            .nav-logo-text {
+                font-size: clamp(8px, 3vw, 12px) !important;
+                line-height: 1.1;
+            }
+
+            .site-logo {
+                height: 40px;
             }
         }
 

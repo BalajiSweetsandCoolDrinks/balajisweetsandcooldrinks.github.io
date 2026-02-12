@@ -46,9 +46,51 @@ nav { align-items:center }
 
 /* Make the nav more compact on small screens */
 @media (max-width: 900px){
-  .nav-logo-text{ font-size: clamp(18px, 4vw, 28px); }
-  .site-logo{ height: 60px }
+  .nav-logo-text{
+    font-size: clamp(14px, 3.5vw, 22px);
+    white-space: normal;
+    max-width: 100%;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .site-logo{ height: 55px }
   header nav { height: auto }
+}
+
+/* Navigation collision fix for mobile */
+@media (max-width: 600px){
+  .nav-logo-text{
+    font-size: clamp(11px, 3vw, 15px) !important;
+    white-space: normal !important;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 5px;
+    line-height: 1.2;
+  }
+
+  .nav-column-center {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .hamburger {
+    padding: 5px;
+    gap: 4px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2.5px;
+  }
+
+  nav {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .site-logo {
+    height: 50px;
+  }
 }
 
 @media (max-width: 1024px){
@@ -76,10 +118,24 @@ nav { align-items:center }
   .checkout-dialog{ width: min(92vw, 420px) }
 }
 
-/* Very small phones */
-@media (max-width:420px){
-  .site-logo{ height:44px }
-  .nav-logo-text{ font-size:16px }
+/* Very small phones - prevent title overflow */
+@media (max-width: 420px){
+  .nav-logo-text{
+    font-size: clamp(9px, 3.2vw, 14px) !important;
+    white-space: normal !important;
+    line-height: 1.15;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 4px;
+  }
+
+  .site-logo{ height: 44px }
+
+  .hamburger span {
+    width: 18px;
+    height: 2px;
+  }
+
   .cart-float{ width:52px; height:52px }
   .whatsapp-float{ width:52px; height:52px }
   #toast{ right:12px; bottom:130px }
