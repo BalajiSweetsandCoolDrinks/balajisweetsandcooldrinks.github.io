@@ -450,14 +450,12 @@
                 padding: 25px 10px;
             }
 
-            /* Navigation mobile fix - prevent title collision with hamburger */
+            /* Navigation mobile fix - keep title on single line */
             .nav-logo-text {
-                font-size: clamp(10px, 3.5vw, 16px) !important;
-                white-space: normal !important;
-                max-width: 100%;
+                font-size: clamp(10px, 2.8vw, 15px) !important;
+                white-space: nowrap !important;
+                max-width: none;
                 text-align: center;
-                line-height: 1.2;
-                padding: 0 5px;
             }
 
             nav {
@@ -481,7 +479,7 @@
             }
 
             .site-logo {
-                height: 50px;
+                height: 40px;
             }
         }
 
@@ -516,9 +514,10 @@
                 line-height: 1.3;
             }
 
-            /* Additional mobile fix for very small screens */
+            /* Keep title on single line */
             .nav-logo-text {
-                font-size: clamp(9px, 3.2vw, 14px) !important;
+                font-size: clamp(9px, 2.5vw, 13px) !important;
+                white-space: nowrap !important;
             }
 
             .hamburger span {
@@ -531,7 +530,7 @@
             }
 
             .site-logo {
-                height: 45px;
+                height: 35px;
             }
         }
 
@@ -559,14 +558,14 @@
                 font-size: 9px;
             }
 
-            /* Extra small screen title fix */
+            /* Keep title on single line for very small screens */
             .nav-logo-text {
-                font-size: clamp(8px, 3vw, 12px) !important;
-                line-height: 1.1;
+                font-size: clamp(8px, 2.2vw, 11px) !important;
+                white-space: nowrap !important;
             }
 
             .site-logo {
-                height: 40px;
+                height: 30px;
             }
         }
 
