@@ -1,0 +1,367 @@
+/* ==========================================
+   Unified Typography CSS for Balaji Sweets
+   Consistent font sizes and spacing across all pages
+   ========================================== */
+
+/* CSS Variables - Unified Typography */
+:root {
+    /* Typography Scale */
+    --font-primary: 'Great Vibes', cursive;
+    --font-secondary: 'Playfair Display', serif;
+    --font-body: 'Poppins', Georgia, serif;
+
+    /* Font Sizes */
+    --text-xs: 9px;
+    --text-sm: 10px;
+    --text-base: 14px;
+    --text-md: 15px;
+    --text-lg: 16px;
+    --text-xl: 17px;
+    --text-2xl: 18px;
+    --text-3xl: 20px;
+
+    /* Heading Sizes - Main Titles (h1) */
+    --h1-desktop: 48px;
+    --h1-tablet: 40px;
+    --h1-mobile: 34px;
+    --h1-small-mobile: 28px;
+
+    /* Logo Sizes */
+    --logo-desktop: 28px;
+    --logo-tablet: 24px;
+    --logo-mobile: 20px;
+
+    /* Section Titles */
+    --section-title-desktop: 38px;
+    --section-title-mobile: 26px;
+
+    /* Card Titles */
+    --card-title-desktop: 20px;
+    --card-title-mobile: 13px;
+
+    /* Line Heights */
+    --line-height-tight: 1.4;
+    --line-height-base: 1.6;
+    --line-height-relaxed: 1.7;
+    --line-height-loose: 1.85;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 6px;
+    --spacing-md: 8px;
+    --spacing-lg: 10px;
+    --spacing-xl: 12px;
+    --spacing-2xl: 14px;
+    --spacing-3xl: 18px;
+
+    /* Container Padding */
+    --container-padding-desktop: 60px 25px;
+    --container-padding-mobile: 25px 10px;
+    --container-padding-small-mobile: 20px 15px;
+}
+
+/* ==========================================
+   Base Typography Styles
+   ========================================== */
+
+/* Main Page Titles (h1) */
+h1 {
+    font-family: var(--font-primary);
+    font-size: var(--h1-desktop);
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 45px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background: var(--accent-gradient);
+    border-radius: 2px;
+}
+
+/* Section Titles (used in index.html grid sections) */
+.section-title {
+    font-family: var(--font-primary);
+    font-size: var(--section-title-desktop);
+    font-weight: 700;
+    margin-top: 60px;
+    margin-bottom: 45px;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background: var(--accent-gradient);
+    border-radius: 2px;
+}
+
+/* Logo in Header */
+header .logo,
+.nav-logo-text {
+    font-family: var(--font-secondary);
+    font-size: var(--logo-desktop);
+    color: var(--primary);
+    font-weight: 600;
+    white-space: nowrap;
+    word-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Card Titles */
+.info-card h3,
+.menu-title,
+.contact-item .label,
+article h2 {
+    font-family: var(--font-secondary);
+    font-size: var(--card-title-desktop);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+}
+
+/* Body Text */
+body {
+    font-family: var(--font-body);
+    line-height: var(--line-height-base);
+    font-variant-numeric: tabular-nums;
+    color: var(--dark-light);
+}
+
+/* Paragraphs */
+p {
+    line-height: var(--line-height-relaxed);
+    color: var(--dark-light);
+    font-size: var(--text-lg);
+}
+
+/* ==========================================
+   Responsive Typography
+   ========================================== */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: var(--h1-tablet);
+        margin-bottom: 25px;
+    }
+
+    h1::after {
+        bottom: -8px;
+        width: 60px;
+        height: 3px;
+    }
+
+    .section-title {
+        font-size: var(--section-title-mobile);
+        margin-bottom: 20px;
+    }
+
+    .section-title::after {
+        bottom: -8px;
+        width: 50px;
+        height: 3px;
+    }
+
+    header .logo,
+    .nav-logo-text {
+        font-size: var(--logo-tablet);
+    }
+
+    .info-card h3,
+    .menu-title,
+    .contact-item .label,
+    article h2 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: var(--text-base);
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: var(--h1-mobile);
+        margin-bottom: 20px;
+    }
+
+    h1::after {
+        bottom: -6px;
+        width: 50px;
+        height: 3px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .section-title::after {
+        bottom: -6px;
+        width: 40px;
+        height: 3px;
+    }
+
+    header .logo,
+    .nav-logo-text {
+        font-size: var(--logo-mobile);
+    }
+
+    .info-card h3,
+    .menu-title,
+    .contact-item .label,
+    article h2 {
+        font-size: var(--text-md);
+        margin-bottom: 8px;
+    }
+
+    article h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: var(--text-sm);
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: var(--h1-small-mobile);
+    }
+
+    .info-card h3,
+    .menu-title,
+    .contact-item .label,
+    article h2 {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    article h2 {
+        font-size: 16px;
+    }
+}
+
+/* ==========================================
+   Utility Classes for Specific Elements
+   ========================================== */
+
+/* Lead/Subtitle text */
+.lead,
+.subtitle,
+.message {
+    text-align: center;
+    color: var(--dark-light);
+    font-size: var(--text-lg);
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+/* Footer links */
+.footer-link {
+    font-size: var(--text-md);
+    font-weight: 600;
+}
+
+/* Navigation links */
+header a {
+    font-size: var(--text-base);
+    font-weight: 500;
+}
+
+/* Button text */
+.back,
+.back-btn,
+.submit-btn,
+.checkout-btn,
+.add-btn {
+    font-size: var(--text-md);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Price text */
+.menu-price,
+.item-price {
+    font-size: var(--text-base);
+    font-weight: 500;
+}
+
+/* Contact info text */
+.contact-item,
+.address-lines div {
+    font-size: var(--text-base);
+}
+
+/* ==========================================
+   Container Spacing
+   ========================================== */
+
+.container {
+    padding: var(--container-padding-desktop);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 45px 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: var(--container-padding-mobile);
+    }
+}
+
+/* ==========================================
+   Article/Card Padding
+   ========================================== */
+
+article,
+.feedback-card,
+.card,
+.coming-soon-box {
+    padding: 45px 40px;
+}
+
+@media (max-width: 768px) {
+    article,
+    .feedback-card,
+    .card,
+    .coming-soon-box {
+        padding: 32px 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    article,
+    .feedback-card,
+    .card,
+    .coming-soon-box {
+        padding: 28px 18px;
+    }
+}
+
