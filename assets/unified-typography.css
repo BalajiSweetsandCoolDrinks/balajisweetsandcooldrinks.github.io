@@ -295,12 +295,46 @@ header a {
 /* Button text */
 .back,
 .back-btn,
+.back-link,
 .submit-btn,
 .checkout-btn,
 .add-btn {
     font-size: var(--text-md);
     font-weight: 500;
     letter-spacing: 1px;
+}
+
+/* Unified Back Link Button */
+.back-link,
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: var(--primary-gradient);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.back-link:hover,
+.back:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .back-link,
+    .back {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
 }
 
 /* Price text */
