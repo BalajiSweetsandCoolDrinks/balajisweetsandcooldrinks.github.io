@@ -120,6 +120,27 @@
             width: 60%;
         }
 
+        /* Home button styling - red padded button at end of header */
+        .home-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #c45a3f 0%, #a04535 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
+        }
+
         .container {
             max-width: 950px;
             margin: 0 auto;
@@ -388,14 +409,15 @@
     <link rel="stylesheet" href="assets/unified-typography.css">
 </head>
 <body>
-    <header>
-        <div class="wrap">
-            <div class="logo">Balaji Sweets and Cool Drinks</div>
-            <nav>
-                <a href="index">Home</a>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="wrap">
+        <div class="logo">Balaji Sweets and Cool Drinks</div>
+        <nav>
+        </nav>
+        <a href="index.html" class="home-btn">Home</a>
+    </div>
+</header>
+
 
     <main class="container">
         <h1>Contact Us</h1>
@@ -471,7 +493,7 @@
                 </iframe>
             </div>
 
-            <a class="back-link" href="index">← Back to Home</a>
+            <a class="back-link" href="index.html">← Back to Home</a>
         </div>
     </main>
 

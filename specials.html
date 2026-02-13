@@ -81,6 +81,27 @@
         header a { text-decoration: none; color: var(--dark-light); margin-left: 18px; font-weight: 500; padding: 10px 18px; border-radius: 25px; transition: var(--transition); }
         header a:hover { color: var(--primary); background: rgba(196, 90, 63, 0.08); }
         
+        /* Home button styling - red padded button at end of header */
+        .home-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #c45a3f 0%, #a04535 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
+        }
+
         .container { max-width: 1200px; margin: 0 auto; padding: 70px 20px; min-height: calc(100vh - 120px); display: flex; align-items: center; justify-content: center; }
         
         .coming-soon-box {
@@ -165,7 +186,8 @@
 <header>
     <div class="wrap">
         <div class="logo">Balaji Sweets and Cool Drinks</div>
-        <nav><a href="index">Home</a></nav>
+        <nav></nav>
+        <a href="index.html" class="home-btn">Home</a>
     </div>
 </header>
 <main class="container">
@@ -173,7 +195,7 @@
         <h1>Coming Soon</h1>
         <p class="subtitle">Special Deals Coming Soon!</p>
         <p class="message">Exclusive offers and seasonal specials.<br>Stay tuned for the grand launch!</p>
-        <a href="index" class="back-link">← Back to Home</a>
+        <a href="index.html" class="back-link">← Back to Home</a>
     </div>
 </main>
 </body>

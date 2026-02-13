@@ -79,6 +79,27 @@
             box-shadow: var(--shadow-hover);
         }
 
+        /* Home button styling - red padded button at end of header */
+        .home-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #c45a3f 0%, #a04535 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
+        }
+
         /* Main Content */
         .container {
             max-width: 900px;
@@ -474,7 +495,9 @@
 <header>
     <div class="wrap">
         <div class="logo">Balaji Sweets and Cool Drinks</div>
-        <a href="index" class="continue-link">Continue Shopping</a>
+        <nav>
+        </nav>
+        <a href="index.html" class="home-btn">Home</a>
     </div>
 </header>
 
@@ -683,4 +706,3 @@
     </script>
 </body>
 </html>
-
