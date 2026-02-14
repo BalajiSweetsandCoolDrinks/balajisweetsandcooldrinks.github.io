@@ -95,7 +95,7 @@ h1::after {
     font-family: var(--font-primary);
     font-size: var(--section-title-desktop);
     font-weight: 700;
-    margin-top: 60px;
+    margin-top: 30px;
     margin-bottom: 45px;
     color: var(--primary);
     position: relative;

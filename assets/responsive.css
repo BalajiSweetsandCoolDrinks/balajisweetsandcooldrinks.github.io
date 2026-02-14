@@ -58,11 +58,30 @@ nav { align-items:center }
 
 /* Navigation collision fix for mobile */
 @media (max-width: 600px){
-  .nav-logo-text{
-    font-size: clamp(10px, 2.8vw, 15px) !important;
+  .nav-logo-text,
+  header .logo {
+    font-size: clamp(12px, 4vw, 22px) !important;
     white-space: nowrap !important;
     max-width: none;
     text-align: center;
+  }
+
+  header .wrap {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  header .logo {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  header .home-btn {
+    font-size: clamp(12px, 4vw, 22px) !important;
+    padding: 8px 16px !important;
+    white-space: nowrap !important;
   }
 
   .nav-column-center {
@@ -117,11 +136,30 @@ nav { align-items:center }
 
 /* Very small phones - keep title on single line */
 @media (max-width: 420px){
-  .nav-logo-text{
-    font-size: clamp(9px, 2.5vw, 13px) !important;
+  .nav-logo-text,
+  header .logo {
+    font-size: clamp(10px, 3.5vw, 16px) !important;
     white-space: nowrap !important;
     max-width: none;
     text-align: center;
+  }
+
+  header .wrap {
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  header .logo {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+
+  header .home-btn {
+    font-size: clamp(10px, 3.5vw, 16px) !important;
+    padding: 4px 8px !important;
+    white-space: nowrap !important;
   }
 
   .site-logo{ height: 35px }
