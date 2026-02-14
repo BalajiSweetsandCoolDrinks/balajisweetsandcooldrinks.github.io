@@ -42,20 +42,22 @@
             }
         }
 
-        header {
+header {
             background: #f8f3e8;
             padding: 20px;
             border-bottom: 2px solid #e0d2b5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .header-wrap {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             flex-wrap: wrap;
             gap: 12px;
+            flex: 1;
         }
 
         .logo {
@@ -323,8 +325,8 @@
 <body>
 
 <header>
+    <div class="logo">Balaji Sweets</div>
     <div class="header-wrap">
-        <div class="logo">Balaji Sweets</div>
         <nav>
         </nav>
         <a href="index.html" class="home-btn">Home</a>
