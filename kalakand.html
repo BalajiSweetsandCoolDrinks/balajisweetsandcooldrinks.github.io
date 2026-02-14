@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/cart.css">
     <style>
         body { --watermark-image: url('images/kalakand.jpg'); --watermark-opacity: 0.25; }
+        body.has-watermark::before { background-image: var(--watermark-image); }
         .coming-soon-container { display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 120px); }
         
         /* Home button styling - red padded button at end of header */
