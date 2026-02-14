@@ -91,18 +91,19 @@
             }
         }
 
-        header { 
+header { 
             background: var(--soft-gradient);
             padding: 15px 20px; 
             border-bottom: 3px solid var(--accent);
             box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         header .wrap {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             flex-wrap: nowrap;
             gap: 10px;
@@ -838,8 +839,8 @@
 <body>
 
 <header>
+    <div class="logo">Balaji Sweets</div>
     <div class="wrap">
-        <div class="logo">Balaji Sweets</div>
         <nav>
         </nav>
         <a href="index.html" class="home-btn">Home</a>
