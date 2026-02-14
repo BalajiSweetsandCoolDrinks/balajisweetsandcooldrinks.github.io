@@ -44,11 +44,96 @@ h2{ font-size: clamp(20px, 4.5vw, 34px); }
 nav { align-items:center }
 .nav-column-left, .nav-column-center, .nav-column-right { min-width:0 }
 
+/* Cart page header styling - matches other pages at tablet breakpoint */
+@media (max-width: 900px) and (min-width: 601px) {
+  header .logo {
+    font-size: clamp(14px, 3vw, 20px);
+  }
+  
+  header .home-btn {
+    font-size: clamp(14px, 3vw, 20px) !important;
+    padding: 10px 20px !important;
+  }
+}
+
+/* Tablet breakpoint (768px) - Home button sizing */
+@media (min-width: 601px) and (max-width: 900px) {
+  .nav-logo-text {
+    font-size: clamp(14px, 3vw, 20px);
+  }
+  
+  /* Make home button font size match the title */
+  header .home-btn {
+    font-size: clamp(14px, 3vw, 20px) !important;
+    padding: 10px 20px !important;
+  }
+}
+
 /* Make the nav more compact on small screens */
 @media (max-width: 900px){
-  .nav-logo-text{ font-size: clamp(18px, 4vw, 28px); }
-  .site-logo{ height: 60px }
+  .nav-logo-text{
+    font-size: clamp(12px, 3vw, 20px);
+    white-space: nowrap;
+    max-width: 100%;
+    text-align: center;
+  }
+  .site-logo{ height: 50px }
   header nav { height: auto }
+}
+
+/* Navigation collision fix for mobile */
+@media (max-width: 600px){
+  .nav-logo-text,
+  header .logo {
+    font-size: clamp(12px, 4vw, 22px) !important;
+    white-space: nowrap !important;
+    max-width: none;
+    text-align: center;
+  }
+
+  /* Simple header (sub-pages): keep logo and home button on same line */
+  header .wrap {
+    flex-wrap: nowrap !important;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  header .logo {
+    flex: 0 0 auto !important;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  header .home-btn {
+    font-size: clamp(11px, 3.5vw, 18px) !important;
+    padding: 6px 12px !important;
+    white-space: nowrap !important;
+    flex: 0 0 auto;
+  }
+
+  .nav-column-center {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .hamburger {
+    padding: 5px;
+    gap: 4px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2.5px;
+  }
+
+  nav {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .site-logo {
+    height: 40px;
+  }
 }
 
 @media (max-width: 1024px){
@@ -76,10 +161,43 @@ nav { align-items:center }
   .checkout-dialog{ width: min(92vw, 420px) }
 }
 
-/* Very small phones */
-@media (max-width:420px){
-  .site-logo{ height:44px }
-  .nav-logo-text{ font-size:16px }
+/* Very small phones - keep title on single line */
+@media (max-width: 420px){
+  .nav-logo-text,
+  header .logo {
+    font-size: clamp(10px, 3.5vw, 16px) !important;
+    white-space: nowrap !important;
+    max-width: none;
+    text-align: center;
+  }
+
+  /* Simple header (sub-pages): keep logo and home button on same line */
+  header .wrap {
+    flex-wrap: nowrap !important;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  header .logo {
+    flex: 0 0 auto !important;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  header .home-btn {
+    font-size: clamp(9px, 3vw, 14px) !important;
+    padding: 4px 8px !important;
+    white-space: nowrap !important;
+    flex: 0 0 auto;
+  }
+
+  .site-logo{ height: 35px }
+
+  .hamburger span {
+    width: 18px;
+    height: 2px;
+  }
+
   .cart-float{ width:52px; height:52px }
   .whatsapp-float{ width:52px; height:52px }
   #toast{ right:12px; bottom:130px }

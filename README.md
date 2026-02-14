@@ -1,6 +1,6 @@
-# Balaji Sweets and Cool Drinks - Website Documentation
+# Balaji Sweets - Website Documentation
 
-A responsive e-commerce website for Balaji Sweets and Cool Drinks, featuring product catalogs, shopping cart functionality, and WhatsApp integration for orders.
+A responsive e-commerce website for Balaji Sweets, featuring product catalogs, shopping cart functionality, and WhatsApp integration for orders.
 
 ## 📁 Project Structure
 
@@ -71,7 +71,7 @@ body::before {
 
 ### Standalone Cart Page (cart.html)
 - Dedicated cart page with product images displayed alongside items
-- Header with "Balaji Sweets and Cool Drinks" logo and "Continue Shopping" button
+- Header with "Balaji Sweets" logo and "Continue Shopping" button
 - Cart items show product image, name, weight, quantity, and price
 - Quantity adjustment buttons (+/-) for each item
 - Remove button for each cart item
@@ -197,4 +197,4 @@ const WHATSAPP_NUMBER = "+919962899084";
 
 ## 📝 License
 
-This project is owned by Balaji Sweets and Cool Drinks.
+This project is owned by Balaji Sweets.

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Balaji Sweets and Cool Drinks</title>
+    <title>Menu - Balaji Sweets</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* CSS Variables for Easy Theming */
@@ -47,7 +47,7 @@
         /* Watermark */
         body {
             --watermark-image: url('images/menu.jpg');
-            --watermark-opacity: 0.35;
+            --watermark-opacity: 0.45;
 
             font-family: 'Poppins', Georgia, serif;
             background-color: var(--light);
@@ -104,13 +104,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: nowrap;
+            gap: 10px;
         }
 
         header .logo {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'Playfair Display', serif;
             font-size: 28px;
             color: var(--primary);
             font-weight: 600;
+            flex: 0 0 auto;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        header nav {
+            flex: 0 0 auto;
+            min-width: 0;
         }
 
         header a {
@@ -143,6 +153,27 @@
 
         header a:hover::before {
             width: 60%;
+        }
+
+        /* Home button styling - red padded button at end of header */
+        .home-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #c45a3f 0%, #a04535 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
         }
 
         .container {
@@ -684,24 +715,25 @@
     </style>
     <link rel="stylesheet" href="assets/cart.css">
     <link rel="stylesheet" href="assets/responsive.css">
+    <link rel="stylesheet" href="assets/unified-typography.css">
 </head>
 <body>
 
 <header>
     <div class="wrap">
-        <div class="logo">Balaji Sweets and Cool Drinks</div>
+        <div class="logo">Balaji Sweets</div>
         <nav>
-            <a href="index.html">Home</a>
         </nav>
+        <a href="index.html" class="home-btn">Home</a>
     </div>
 </header>
 
 <main class="container">
     <h1>Our Menu</h1>
     <div class="menu-grid">
-        <div class="menu-item" onclick="openProduct('MOTICHOOR LADDU', 200, 'images/motichoor-laddoo.jpg')">
-            <img src="images/motichoor-laddoo.jpg" alt="Motichoor Laddu">
-            <div class="menu-title">MOTICHOOR LADDU</div>
+        <div class="menu-item" onclick="openProduct('MOTICHOOR LADOO', 200, 'images/motichoor-ladoo.jpg')">
+            <img src="images/motichoor-ladoo.jpg" alt="Motichoor Ladoo">
+            <div class="menu-title">MOTICHOOR LADOO</div>
             <div class="menu-price">From ₹ 200</div>
         </div>
 
@@ -718,7 +750,7 @@
         </div>
     </div>
     <div style="text-align: center;">
-        <a class="back" href="index.html">Back to Home</a>
+        <a class="back-link" href="index.html">← Back to Home</a>
     </div>
 </main>
 

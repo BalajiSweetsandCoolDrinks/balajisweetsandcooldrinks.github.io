@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Balaji Sweets and Cool Drinks</title>
+    <title>Balaji Sweets</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +51,7 @@
         body {
             /* Watermark image path: replace with your file if needed */
             --watermark-image: url('images/background.jpg');
-            --watermark-opacity: 0.35;
+            --watermark-opacity: 0.125;
             /* adjust to taste */
 
             background-color: var(--light);
@@ -121,7 +121,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
+            max-width: 1750px;
             margin: 0 auto;
             height: 85px;
         }
@@ -155,7 +155,7 @@
         }
 
         .nav-logo-text {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'Playfair Display', serif;
             font-size: 32px;
             font-weight: bold;
             color: var(--primary);
@@ -258,10 +258,10 @@
         }
 
         .section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Great Vibes', cursive;
             font-size: 38px;
             font-weight: 700;
-            margin-top: 60px;
+            margin-top: 30px;
             margin-bottom: 45px;
             color: var(--primary);
             position: relative;
@@ -419,35 +419,67 @@
                 gap: 12px;
                 margin-bottom: 30px;
             }
-            
+
             .section-title {
                 font-size: 26px;
                 margin-bottom: 20px;
             }
-            
+
             .info-card {
                 padding: 12px 10px;
                 border-radius: 12px;
             }
-            
+
             .info-card h3 {
                 font-size: 13px;
                 margin-bottom: 6px;
             }
-            
+
             .info-card p {
                 font-size: 11px;
                 line-height: 1.4;
             }
-            
+
             .info-card img {
                 border-radius: 10px;
                 margin-bottom: 10px;
                 aspect-ratio: 4/3;
             }
-            
+
             .container {
                 padding: 25px 10px;
+            }
+
+            /* Navigation mobile fix - keep title on single line */
+            .nav-logo-text {
+                font-size: clamp(10px, 2.8vw, 15px) !important;
+                white-space: nowrap !important;
+                max-width: none;
+                text-align: center;
+            }
+
+            nav {
+                height: auto;
+                min-height: 55px;
+                padding: 8px 10px;
+            }
+
+            .nav-column-center {
+                flex: 1;
+            }
+
+            .hamburger {
+                padding: 5px;
+                gap: 4px;
+            }
+
+            .hamburger span {
+                width: 22px;
+                height: 2.5px;
+            }
+
+            .site-logo {
+                height: 40px;
             }
         }
 
@@ -456,30 +488,49 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
-            
+
             .section-title {
                 font-size: 22px;
                 margin-bottom: 18px;
             }
-            
+
             .info-card {
                 padding: 10px 8px;
                 border-radius: 10px;
             }
-            
+
             .info-card img {
                 border-radius: 8px;
                 margin-bottom: 8px;
             }
-            
+
             .info-card h3 {
                 font-size: 12px;
                 margin-bottom: 4px;
             }
-            
+
             .info-card p {
                 font-size: 10px;
                 line-height: 1.3;
+            }
+
+            /* Keep title on single line */
+            .nav-logo-text {
+                font-size: clamp(9px, 2.5vw, 13px) !important;
+                white-space: nowrap !important;
+            }
+
+            .hamburger span {
+                width: 20px;
+                height: 2px;
+            }
+
+            .hamburger {
+                padding: 4px;
+            }
+
+            .site-logo {
+                height: 35px;
             }
         }
 
@@ -488,23 +539,33 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
             }
-            
+
             .info-card {
                 padding: 8px 6px;
                 border-radius: 8px;
             }
-            
+
             .info-card img {
                 border-radius: 6px;
                 margin-bottom: 6px;
             }
-            
+
             .info-card h3 {
                 font-size: 11px;
             }
-            
+
             .info-card p {
                 font-size: 9px;
+            }
+
+            /* Keep title on single line for very small screens */
+            .nav-logo-text {
+                font-size: clamp(8px, 2.2vw, 11px) !important;
+                white-space: nowrap !important;
+            }
+
+            .site-logo {
+                height: 30px;
             }
         }
 
@@ -521,6 +582,7 @@
     </style>
     <link rel="stylesheet" href="assets/cart.css">
     <link rel="stylesheet" href="assets/responsive.css">
+    <link rel="stylesheet" href="assets/unified-typography.css">
 </head>
 
 <body>
@@ -536,7 +598,7 @@
             </div>
 
             <div class="nav-column-center">
-                <div class="nav-logo-text">Balaji Sweets and Cool Drinks</div>
+                <div class="nav-logo-text">Balaji Sweets</div>
             </div>
 
             <div class="nav-column-right">
@@ -574,13 +636,29 @@
                 <img src="images/sugar-free.jpg" alt="Sugar Free">
                 <h3>SUGAR FREE</h3>
             </a>
-            <a class="info-card" href="namkeen.html">
-                <img src="images/namkeen.jpg" alt="Namkeen">
-                <h3>NAMKEEN</h3>
+            <a class="info-card" href="baklava.html">
+                <img src="images/Baklava.jpg" alt="Baklava">
+                <h3>BAKLAVA</h3>
+            </a>
+            <a class="info-card" href="ladoo.html">
+                <img src="images/ladoo.jpg" alt="Ladoo">
+                <h3>LADOO</h3>
+            </a>
+            <a class="info-card" href="palakova.html">
+                <img src="images/Palakova.jpg" alt="Palakova">
+                <h3>PALAKOVA</h3>
             </a>
             <a class="info-card" href="bengali-sweets.html">
                 <img src="images/bengali-sweets.jpg" alt="Bengali Sweets">
                 <h3>BENGALI SWEETS</h3>
+            </a>
+            <a class="info-card" href="assorted-sweets.html">
+                <img src="images/indian-sweets.jpg" alt="Assorted Sweets">
+                <h3>ASSORTED SWEETS</h3>
+            </a>
+            <a class="info-card" href="namkeen.html">
+                <img src="images/namkeen.jpg" alt="Namkeen">
+                <h3>NAMKEEN</h3>
             </a>
             <a class="info-card" href="snacks.html">
                 <img src="images/snacks.jpg" alt="Snacks">
@@ -600,19 +678,19 @@
         <div class="grid-layout">
             <div class="info-card">
                 <h3>Piduguralla Main Branch</h3>
-                <p>Balaji Sweets and Cool Drinks<br>Beside Gangamma Temple<br>Main Road, Piduguralla<br>Andhra Pradesh - 522413<br>📞 +919989606777</p>
+                <p>Balaji Sweets<br>Beside Gangamma Temple<br>Main Road, Piduguralla<br>Andhra Pradesh - 522413<br>📞 +919989606777</p>
             </div>
             <div class="info-card">
                 <h3>Piduguralla</h3>
-                <p>Balaji Sweets and Cool Drinks<br>Main Road<br>Piduguralla, Palnadu<br>Andhra Pradesh - 522413<br>📞 +917897897567, +917357895789</p>
+                <p>Balaji Sweets<br>Main Road<br>Piduguralla, Palnadu<br>Andhra Pradesh - 522413<br>📞 +917897897567, +917357895789</p>
             </div>
             <div class="info-card">
                 <h3>Miryalaguda</h3>
-                <p>Balaji Sweets and Cool Drinks<br>Srilatha Lodge, Sagar Road<br>Doctors Colony, Miryalaguda<br>Telangana - 508207<br>📞 +919091919994, +919091919992</p>
+                <p>Balaji Sweets<br>Srilatha Lodge, Sagar Road<br>Doctors Colony, Miryalaguda<br>Telangana - 508207<br>📞 +919091919994, +919091919992</p>
             </div>
             <div class="info-card">
                 <h3>Narasaraopeta</h3>
-                <p>Balaji Sweets and Cool Drinks<br>Station Road<br>Arundelpet, Narasaraopeta<br>Andhra Pradesh - 522601<br>📞 +918054356789, +919999550077</p>
+                <p>Balaji Sweets<br>Station Road<br>Arundelpet, Narasaraopeta<br>Andhra Pradesh - 522601<br>📞 +918054356789, +919999550077</p>
             </div>
         </div>
     </main>
@@ -686,24 +764,6 @@
     </a>
 
     <script>
-        // Hide link URL in status bar on hover
-        document.querySelectorAll('.info-card a').forEach(link => {
-            link.addEventListener('mouseover', function(e) {
-                // Override the status bar by preventing default
-                try {
-                    this.blur();
-                } catch(err) {}
-            });
-        });
-
-        // Navigate without showing URL in status bar
-        document.querySelectorAll('.info-card a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.location.href = this.getAttribute('href');
-            });
-        });
-
         const menuBtn = document.getElementById('menuBtn');
         const sideNav = document.getElementById('sideNav');
 

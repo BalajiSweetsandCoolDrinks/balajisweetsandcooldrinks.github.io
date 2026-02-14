@@ -3,177 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namkeen - Balaji Sweets and Cool Drinks</title>
+    <title>Namkeen - Balaji Sweets</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/unified-styles.css">
+    <link rel="stylesheet" href="assets/responsive.css">
+    <link rel="stylesheet" href="assets/cart.css">
     <style>
-        :root {
-            --primary: #c45a3f;
-            --primary-dark: #a04535;
-            --secondary: #f5e6d3;
-            --accent: #d4a017;
-            --dark-light: #5c4033;
-            --light: #fffdf8;
-            --white: #ffffff;
-            --primary-gradient: linear-gradient(135deg, #c45a3f 0%, #a04535 100%);
-            --accent-gradient: linear-gradient(135deg, #d4a017 0%, #b8860b 100%);
-            --soft-gradient: linear-gradient(180deg, #fff 0%, var(--secondary) 100%);
-            --shadow-sm: 0 2px 8px rgba(196, 90, 63, 0.1);
-            --shadow-md: 0 4px 20px rgba(196, 90, 63, 0.15);
-            --shadow-lg: 0 8px 40px rgba(196, 90, 63, 0.2);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+        body { --watermark-image: url('images/namkeen.jpg'); --watermark-opacity: 0.25; }
+        .coming-soon-container { display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 120px); }
         
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: 'Poppins', Georgia, serif;
-            background-color: var(--light);
-            color: var(--dark-light);
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-            line-height: 1.7;
-        }
-        
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('images/namkeen.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            opacity: 0.25;
-            z-index: -1;
-            filter: saturate(0.85);
-            will-change: opacity;
-        }
-        
-        @media (max-width: 768px) {
-            body::before {
-                opacity: 0.18;
-                background-size: cover;
-                background-position: center center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            body::before {
-                opacity: 0.15;
-            }
-        }
-        
-        header { 
-            background: var(--soft-gradient);
-            padding: 15px 20px; 
-            border-bottom: 3px solid var(--accent);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        header .wrap { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
-        header .logo { font-family: 'Great Vibes', cursive; font-size: 28px; color: var(--primary); font-weight: 600; }
-        header a { text-decoration: none; color: var(--dark-light); margin-left: 18px; font-weight: 500; padding: 10px 18px; border-radius: 25px; transition: var(--transition); }
-        header a:hover { color: var(--primary); background: rgba(196, 90, 63, 0.08); }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 70px 20px; min-height: calc(100vh - 120px); display: flex; align-items: center; justify-content: center; }
-        
-        .coming-soon-box {
-            max-width: 650px;
-            width: 100%;
-            background: var(--soft-gradient);
-            border: 2px solid rgba(196, 90, 63, 0.1);
-            border-radius: 20px;
-            padding: 55px 40px;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .coming-soon-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--accent-gradient);
-        }
-        
-        .coming-soon-box h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 68px;
-            color: var(--primary);
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .coming-soon-box .subtitle {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
-            color: var(--dark-light);
-            margin-bottom: 25px;
-            font-style: italic;
-        }
-        
-        .coming-soon-box .message {
-            font-size: 17px;
-            color: var(--dark-light);
-            line-height: 1.8;
-            max-width: 420px;
-            margin: 0 auto 35px;
-            opacity: 0.9;
-        }
-        
-        .back-btn {
+        /* Home button styling - red padded button at end of header */
+        .home-btn {
             display: inline-block;
-            padding: 15px 40px;
-            background: var(--primary-gradient);
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #c45a3f 0%, #a04535 100%);
             color: #ffffff;
             text-decoration: none;
-            border-radius: 30px;
-            font-size: 15px;
+            border-radius: 25px;
             font-weight: 500;
+            font-size: 15px;
             letter-spacing: 1px;
-            transition: var(--transition);
-            box-shadow: var(--shadow-md);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
             text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
         
-        .back-btn:hover {
+        .home-btn:hover {
             transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        @media (max-width: 600px) {
-            .coming-soon-box { padding: 40px 25px; }
-            .coming-soon-box h1 { font-size: 50px; }
-            .coming-soon-box .subtitle { font-size: 22px; }
+            box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
         }
     </style>
-    <link rel="stylesheet" href="assets/cart.css">
-    <link rel="stylesheet" href="assets/responsive.css">
 </head>
-<body>
+<body class="has-watermark">
+
 <header>
     <div class="wrap">
-        <div class="logo">Balaji Sweets and Cool Drinks</div>
-        <nav><a href="index.html">Home</a></nav>
+        <div class="logo">Balaji Sweets</div>
+        <nav>
+        </nav>
+        <a href="index.html" class="home-btn">Home</a>
     </div>
 </header>
-<main class="container">
+
+<main class="container coming-soon-container">
     <div class="coming-soon-box">
         <h1>Coming Soon</h1>
         <p class="subtitle">Crispy Namkeen Coming Soon!</p>
         <p class="message">Perfect snacking companion coming soon.<br>Stay tuned for the grand launch!</p>
-        <a href="index.html" class="back-btn">Back to Home</a>
+        <a href="index.html" class="back-btn">← Back to Home</a>
     </div>
 </main>
+
 </body>
 </html>

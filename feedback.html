@@ -3,13 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Feedback - Balaji Sweets and Cool Drinks</title>
+    <title>Feedback - Balaji Sweets</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #c45a3f;
+            --primary-dark: #a04535;
+            --accent: #d4a017;
+        }
+
         body {
             font-family: Georgia, serif;
             background: #fffdf5;
-            color: #7a2d1d;
+            color: var(--primary-dark);
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -53,15 +59,15 @@
         }
 
         .logo {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'Playfair Display', serif;
             font-size: 28px;
-            color: #8b2d1f;
+            color: var(--primary);
         }
 
         .continue-link {
             display: inline-block;
             padding: 10px 20px;
-            background: #8b2d1f;
+            background: var(--primary);
             color: #fff;
             text-decoration: none;
             border-radius: 25px;
@@ -71,8 +77,29 @@
         }
 
         .continue-link:hover {
-            background: #7a2518;
+            background: var(--primary-dark);
             transform: translateY(-2px);
+        }
+
+        /* Home button styling - red padded button at end of header */
+        .home-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #c45a3f 0%, #a04535 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
         }
 
         .container {
@@ -84,14 +111,14 @@
         h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 42px;
-            color: #8b2d1f;
+            color: var(--primary);
             text-align: center;
             margin-bottom: 10px;
         }
 
         .subtitle {
             text-align: center;
-            color: #4a3a2f;
+            color: #5c4033;
             margin-bottom: 30px;
             font-size: 16px;
         }
@@ -111,7 +138,7 @@
         .form-group label {
             display: block;
             font-weight: bold;
-            color: #8b2d1f;
+            color: var(--primary);
             margin-bottom: 8px;
             font-size: 15px;
         }
@@ -127,7 +154,7 @@
             font-family: Georgia, serif;
             font-size: 15px;
             background: #fff;
-            color: #7a2d1d;
+            color: var(--primary-dark);
             box-sizing: border-box;
             transition: 0.3s;
         }
@@ -135,8 +162,8 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #8b2d1f;
-            box-shadow: 0 0 0 3px rgba(139, 45, 31, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(196, 90, 63, 0.1);
         }
 
         .form-group textarea {
@@ -166,16 +193,16 @@
         }
 
         .feedback-type input[type="radio"] {
-            accent-color: #8b2d1f;
+            accent-color: var(--primary);
         }
 
         .feedback-type label:hover {
-            border-color: #8b2d1f;
+            border-color: var(--primary);
             background: #fff5eb;
         }
 
         .feedback-type input[type="radio"]:checked + span {
-            color: #8b2d1f;
+            color: var(--primary);
             font-weight: bold;
         }
 
@@ -217,7 +244,7 @@
         .submit-btn {
             width: 100%;
             padding: 16px;
-            background: #8b2d1f;
+            background: var(--primary);
             color: #fff;
             border: none;
             border-radius: 12px;
@@ -230,9 +257,9 @@
         }
 
         .submit-btn:hover {
-            background: #7a2518;
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 45, 31, 0.3);
+            box-shadow: 0 6px 20px rgba(196, 90, 63, 0.3);
         }
 
         .submit-btn:active {
@@ -246,21 +273,21 @@
         }
 
         .success-message h2 {
-            color: #8b2d1f;
+            color: var(--primary);
             font-family: 'Great Vibes', cursive;
             font-size: 36px;
             margin-bottom: 15px;
         }
 
         .success-message p {
-            color: #4a3a2f;
+            color: #5c4033;
             font-size: 16px;
         }
 
         .back-link {
             display: inline-block;
             margin-top: 20px;
-            color: #8b2d1f;
+            color: var(--primary);
             text-decoration: none;
             font-weight: 500;
         }
@@ -291,13 +318,16 @@
     </style>
     <link rel="stylesheet" href="assets/cart.css">
     <link rel="stylesheet" href="assets/responsive.css">
+    <link rel="stylesheet" href="assets/unified-typography.css">
 </head>
 <body>
 
 <header>
     <div class="header-wrap">
-        <div class="logo">Balaji Sweets and Cool Drinks</div>
-        <a href="index.html" class="continue-link">Home</a>
+        <div class="logo">Balaji Sweets</div>
+        <nav>
+        </nav>
+        <a href="index.html" class="home-btn">Home</a>
     </div>
 </header>
 
@@ -507,7 +537,7 @@
             other: 'Other'
         };
         
-        let message = `*Feedback - Balaji Sweets and Cool Drinks*\n\n`;
+        let message = `*Feedback - Balaji Sweets*\n\n`;
         message += `*Type:* ${typeLabels[feedbackType]}\n`;
         if (customerName) message += `*Name:* ${customerName}\n`;
         if (contactInfo) message += `*Contact:* ${contactInfo}\n`;
