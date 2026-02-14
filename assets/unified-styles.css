@@ -175,6 +175,8 @@ header .wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
+    gap: 15px;
 }
 
 header .logo {
@@ -182,6 +184,14 @@ header .logo {
     font-size: 28px;
     color: var(--primary);
     font-weight: 600;
+    flex: 0 0 auto;
+    text-align: left;
+    white-space: nowrap;
+}
+
+header nav {
+    flex: 0 0 auto;
+    min-width: 0;
 }
 
 header a {

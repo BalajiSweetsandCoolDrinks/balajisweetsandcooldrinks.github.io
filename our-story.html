@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Our Story - Balaji Sweets and Cool Drinks</title>
+    <title>Our Story - Balaji Sweets</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* CSS Variables for Easy Theming */
@@ -104,6 +104,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: nowrap;
+            gap: 10px;
         }
 
         header .logo {
@@ -111,6 +113,14 @@
             font-size: 28px;
             color: var(--primary);
             font-weight: 600;
+            flex: 0 0 auto;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        header nav {
+            flex: 0 0 auto;
+            min-width: 0;
         }
 
         header a {
@@ -342,7 +352,7 @@
 <body>
     <header>
         <div class="wrap">
-            <div class="logo">Balaji Sweets and Cool Drinks</div>
+            <div class="logo">Balaji Sweets</div>
             <nav>
             </nav>
             <a href="index.html" class="home-btn">Home</a>
@@ -356,7 +366,7 @@
         <article>
             <h2>From Tradition to Taste</h2>
             <p>
-                Balaji Sweets and Cool Drinks started as a family-run shop dedicated to delivering authentic flavours made with
+                Balaji Sweets started as a family-run shop dedicated to delivering authentic flavours made with
                 care. Over the years, we have grown but kept our commitment to quality and traditional recipes passed down
                 through generations.
             </p>

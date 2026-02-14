@@ -1,7 +1,7 @@
 # Balaji Sweets Website - Comprehensive Test Cases
 
 ## Overview
-This document contains comprehensive test cases for verifying all functionality of the Balaji Sweets and Cool Drinks website, including the latest mobile header changes where the home button and title have the same size.
+This document contains comprehensive test cases for verifying all functionality of the Balaji Sweets website, including the latest mobile header changes where the home button and title have the same size.
 
 ---
 

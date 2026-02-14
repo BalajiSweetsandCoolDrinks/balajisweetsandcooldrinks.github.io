@@ -1,6 +1,6 @@
 // Common Header Component - Dynamically injects consistent header across all pages
 const HEADER_CONFIG = {
-    logoText: 'Balaji Sweets and Cool Drinks',
+    logoText: 'Balaji Sweets',
     logoImage: 'images/logo.jpg',
     navLinks: [
         { href: 'our-story', text: 'OUR STORY' },
@@ -73,10 +73,14 @@ function initMobileMenu() {
         e.stopPropagation();
     });
 
-    // Close when clicking outside of the drawer
-    document.addEventListener('click', (e) => {
-        if (!sideNav.contains(e.target) && sideNav.classList.contains('active')) {
-            sideNav.classList.remove('active');
+    // Close when clicking outside of the drawer - use event delegation
+    // This is more reliable than setTimeout
+    document.addEventListener('click', function closeMenuOnClickOutside(e) {
+        if (sideNav.classList.contains('active')) {
+            // Check if click is outside the sideNav and not on the hamburger button
+            if (!sideNav.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+                sideNav.classList.remove('active');
+            }
         }
     });
 
@@ -105,7 +109,7 @@ function injectSimpleHeader() {
     headerContainer.innerHTML = `
     <header>
         <div class="wrap">
-            <div class="logo">Balaji Sweets and Cool Drinks</div>
+            <div class="logo">Balaji Sweets</div>
             <nav>
                 <a href="index">Home</a>
             </nav>

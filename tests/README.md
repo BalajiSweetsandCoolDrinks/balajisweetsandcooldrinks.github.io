@@ -1,6 +1,6 @@
 # Balaji Sweets Website - Automation Testing Framework
 
-This directory contains the Playwright-based automation testing framework for the Balaji Sweets and Cool Drinks website.
+This directory contains the Playwright-based automation testing framework for the Balaji Sweets website.
 
 ## Test Structure
 

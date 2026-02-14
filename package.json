@@ -1,7 +1,7 @@
 {
   "name": "balaji-sweets-automation-tests",
   "version": "1.0.0",
-  "description": "Automation testing framework for Balaji Sweets and Cool Drinks website",
+  "description": "Automation testing framework for Balaji Sweets website",
   "scripts": {
     "test": "playwright test",
     "test:ui": "playwright test --ui",
@@ -25,6 +25,6 @@
     "e2e",
     "website-testing"
   ],
-  "author": "Balaji Sweets Team",
+  "author": "Balaji Sweets",
   "license": "MIT"
 }
