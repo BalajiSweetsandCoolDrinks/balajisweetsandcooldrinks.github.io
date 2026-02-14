@@ -47,7 +47,7 @@
         /* Watermark */
         body {
             --watermark-image: url('images/menu.jpg');
-            --watermark-opacity: 0.45;
+            --watermark-opacity: 0.125;
 
             font-family: 'Poppins', Georgia, serif;
             background-color: var(--light);
@@ -286,6 +286,124 @@
         .back:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-hover);
+        }
+
+        /* Horizontal Category Bar */
+        .category-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, 
+                rgba(196, 90, 63, 0.05) 0%, 
+                rgba(245, 230, 211, 0.9) 15%, 
+                rgba(245, 230, 211, 0.9) 85%, 
+                rgba(196, 90, 63, 0.05) 100%);
+            border-radius: 50px;
+            border-left: 1px solid rgba(196, 90, 63, 0.1);
+            border-right: 1px solid rgba(196, 90, 63, 0.1);
+        }
+
+        .category-link {
+            display: inline-block;
+            padding: 10px 18px;
+            background: var(--primary-gradient);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            white-space: nowrap;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .category-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 90, 63, 0.3);
+            background: var(--primary-dark);
+        }
+
+        /* Coming Soon Box */
+        .coming-soon-box {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--soft-gradient);
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .coming-soon-box h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .coming-soon-box .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .coming-soon-box .message {
+            color: var(--dark-light);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 28px;
+            background: var(--primary-gradient);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
+        }
+
+        .back-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .category-bar {
+                gap: 8px;
+                padding: 15px 10px;
+                margin-bottom: 20px;
+            }
+
+            .category-link {
+                padding: 8px 14px;
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-bar {
+                gap: 6px;
+                padding: 12px 8px;
+                margin-bottom: 15px;
+            }
+
+            .category-link {
+                padding: 6px 10px;
+                font-size: 10px;
+            }
         }
 
         /* Floating cart */
@@ -730,25 +848,34 @@
 
 <main class="container">
     <h1>Our Menu</h1>
-    <div class="menu-grid">
-        <div class="menu-item" onclick="openProduct('MOTICHOOR LADOO', 200, 'images/motichoor-ladoo.jpg')">
-            <img src="images/motichoor-ladoo.jpg" alt="Motichoor Ladoo">
-            <div class="menu-title">MOTICHOOR LADOO</div>
-            <div class="menu-price">From ₹ 200</div>
-        </div>
-
-        <div class="menu-item" onclick="openProduct('KAJU KATLI', 500, 'images/kaju-variety.jpg')">
-            <img src="images/kaju-variety.jpg" alt="Kaju Katli">
-            <div class="menu-title">KAJU KATLI</div>
-            <div class="menu-price">From ₹ 500</div>
-        </div>
-
-        <div class="menu-item" onclick="openProduct('ASSORTED SWEETS', 300, 'images/indian-sweets.jpg')">
-            <img src="images/indian-sweets.jpg" alt="Assorted Sweets">
-            <div class="menu-title">ASSORTED SWEETS</div>
-            <div class="menu-price">From ₹ 300</div>
-        </div>
+    
+    <!-- Horizontal Category Bar -->
+    <div class="category-bar">
+        <button class="category-link" onclick="filterCategory('all')">ALL</button>
+        <button class="category-link" onclick="filterCategory('kaju')">KAJU VARIETY</button>
+        <button class="category-link" onclick="filterCategory('kalakand')">KALAKAND</button>
+        <button class="category-link" onclick="filterCategory('sugarfree')">SUGAR FREE</button>
+        <button class="category-link" onclick="filterCategory('baklava')">BAKLAVA</button>
+        <button class="category-link" onclick="filterCategory('ladoo')">LADOO</button>
+        <button class="category-link" onclick="filterCategory('palakova')">PALAKOVA</button>
+        <button class="category-link" onclick="filterCategory('bengali')">BENGALI SWEETS</button>
+        <button class="category-link" onclick="filterCategory('assorted')">ASSORTED SWEETS</button>
+        <button class="category-link" onclick="filterCategory('namkeen')">NAMKEEN</button>
+        <button class="category-link" onclick="filterCategory('snacks')">SNACKS</button>
+        <button class="category-link" onclick="filterCategory('dryfruits')">DRY FRUITS</button>
+        <button class="category-link" onclick="filterCategory('drinks')">COOL DRINKS</button>
     </div>
+
+    <!-- Category Products Display -->
+    <div id="category-products" class="menu-grid"></div>
+    
+    <!-- Coming Soon Message -->
+    <div id="coming-soon-message" class="coming-soon-box" style="display: none;">
+        <h1>Coming Soon</h1>
+        <p class="subtitle" id="coming-soon-subtitle"></p>
+        <p class="message" id="coming-soon-msg"></p>
+    </div>
+
     <div style="text-align: center;">
         <a class="back-link" href="index.html">← Back to Home</a>
     </div>
@@ -783,6 +910,101 @@
 </div>
 
 <script>
+    // Product data organized by category
+    const categoryProducts = {
+        'kaju': [
+            { name: 'KAJU KATLI', price: 500, image: 'images/kaju-variety.jpg' }
+        ],
+        'ladoo': [
+            { name: 'MOTICHOOR LADOO', price: 200, image: 'images/motichoor-ladoo.jpg' }
+        ],
+        'assorted': [
+            { name: 'ASSORTED SWEETS', price: 300, image: 'images/indian-sweets.jpg' }
+        ],
+        // Categories with no products yet
+        'kalakand': [],
+        'sugarfree': [],
+        'baklava': [],
+        'palakova': [],
+        'bengali': [],
+        'namkeen': [],
+        'snacks': [],
+        'dryfruits': [],
+        'drinks': []
+    };
+
+    // Coming soon messages for each category
+    const comingSoonMessages = {
+        'kalakand': { subtitle: 'Delicious Kalakand Coming Soon!', message: 'Traditional milk sweet with premium quality.<br>Stay tuned for the grand launch!' },
+        'sugarfree': { subtitle: 'Sugar-Free Delights Coming Soon!', message: 'Healthy sweets without compromising on taste.<br>Stay tuned for the grand launch!' },
+        'baklava': { subtitle: 'Delicious Baklava Coming Soon!', message: 'Premium baked sweet with layers of filo pastry, nuts and honey syrup.<br>Stay tuned for the grand launch!' },
+        'palakova': { subtitle: 'Delicious Palakova Coming Soon!', message: 'Traditional milk-based sweet with rich caramelized flavor.<br>Stay tuned for the grand launch!' },
+        'bengali': { subtitle: 'Authentic Bengali Sweets Coming Soon!', message: 'Rasgulla, Sandesh, and more.<br>Stay tuned for the grand launch!' },
+        'namkeen': { subtitle: 'Crispy Namkeen Coming Soon!', message: 'Perfect snacking companion coming soon.<br>Stay tuned for the grand launch!' },
+        'snacks': { subtitle: 'Tasty Snacks Coming Soon!', message: 'Crispy and delicious snacks for every occasion.<br>Stay tuned for the grand launch!' },
+        'dryfruits': { subtitle: 'Premium Dry Fruits Coming Soon!', message: 'Assorted premium dry fruits for gifting.<br>Stay tuned for the grand launch!' },
+        'drinks': { subtitle: 'Cool Drinks Coming Soon!', message: 'Refreshing beverages to quench your thirst.<br>Stay tuned for the grand launch!' }
+    };
+
+    // All products combined
+    const allProducts = [
+        { name: 'MOTICHOOR LADOO', price: 200, image: 'images/motichoor-ladoo.jpg', category: 'ladoo' },
+        { name: 'KAJU KATLI', price: 500, image: 'images/kaju-variety.jpg', category: 'kaju' },
+        { name: 'ASSORTED SWEETS', price: 300, image: 'images/indian-sweets.jpg', category: 'assorted' }
+    ];
+
+    // Function to create product HTML
+    function createProductItem(product) {
+        return `
+            <div class="menu-item" onclick="openProduct('${product.name}', ${product.price}, '${product.image}')">
+                <img src="${product.image}" alt="${product.name}">
+                <div class="menu-title">${product.name}</div>
+                <div class="menu-price">From ₹ ${product.price}</div>
+            </div>
+        `;
+    }
+
+    // Function to filter by category
+    function filterCategory(category) {
+        const productsContainer = document.getElementById('category-products');
+        const comingSoonMsg = document.getElementById('coming-soon-message');
+        const subtitleEl = document.getElementById('coming-soon-subtitle');
+        const msgEl = document.getElementById('coming-soon-msg');
+        
+        if (category === 'all') {
+            // Show all products
+            productsContainer.innerHTML = allProducts.map(p => createProductItem(p)).join('');
+            comingSoonMsg.style.display = 'none';
+            productsContainer.style.display = 'grid';
+        } else {
+            const products = categoryProducts[category] || [];
+            
+            if (products.length > 0) {
+                // Show products for this category
+                productsContainer.innerHTML = products.map(p => createProductItem(p)).join('');
+                comingSoonMsg.style.display = 'none';
+                productsContainer.style.display = 'grid';
+            } else {
+                // Show coming soon message
+                const msg = comingSoonMessages[category];
+                if (msg) {
+                    subtitleEl.textContent = msg.subtitle;
+                    msgEl.innerHTML = msg.message;
+                    productsContainer.style.display = 'none';
+                    comingSoonMsg.style.display = 'block';
+                }
+            }
+        }
+        
+        // Scroll to products section
+        productsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Initialize with all products shown
+    document.addEventListener('DOMContentLoaded', function() {
+        filterCategory('all');
+    });
+
     let productState = {
         name: '',
         basePrice: 0,
