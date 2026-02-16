@@ -149,7 +149,7 @@ nav { align-items:center }
   .nav-logo-text{ text-align:center }
   .nav-column-left, .nav-column-right { display:flex; align-items:center }
   .nav-column-center { order:0 }
-  .nav-menu{ width:100%; right:-100%; }
+  .nav-menu{ width:50%; right:-50%; }
   .nav-menu.active{ right:0; }
 
   /* Cart & WhatsApp floats move slightly left on small screens to avoid the system UI */
@@ -286,4 +286,3 @@ header{ backdrop-filter: blur(4px); }
 
 /* Keep the site accessible - ensure focus outlines */
 a:focus, button:focus{ outline: 3px solid rgba(139,45,31,0.12); outline-offset: 2px; }
-
