@@ -149,7 +149,7 @@ nav { align-items:center }
   .nav-logo-text{ text-align:center }
   .nav-column-left, .nav-column-right { display:flex; align-items:center }
   .nav-column-center { order:0 }
-  .nav-menu{ width:50%; right:-50%; }
+  .nav-menu{ width:60%; right:-60%; }
   .nav-menu.active{ right:0; }
 
   /* Cart & WhatsApp floats move slightly left on small screens to avoid the system UI */
