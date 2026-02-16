@@ -36,8 +36,8 @@ test.describe('Feedback Form Tests', () => {
       page.click('button[type="submit"]')
     ]);
     
-    // Verify WhatsApp popup opened with correct message
-    await expect(popup).toHaveURL(/wa.me/);
+    // Verify WhatsApp popup opened with correct message (accept both wa.me and api.whatsapp.com)
+    await expect(popup).toHaveURL(/wa\.me|api\.whatsapp\.com/);
     await popup.close();
     
     // Verify success message shown
@@ -71,7 +71,8 @@ test.describe('Feedback Form Tests', () => {
       page.click('button[type="submit"]')
     ]);
     
-    await expect(popup).toHaveURL(/wa.me/);
+    // Verify WhatsApp popup opened with correct message (accept both wa.me and api.whatsapp.com)
+    await expect(popup).toHaveURL(/wa\.me|api\.whatsapp\.com/);
     await popup.close();
   });
 
@@ -90,7 +91,8 @@ test.describe('Feedback Form Tests', () => {
       page.click('button[type="submit"]')
     ]);
     
-    await expect(popup).toHaveURL(/wa.me/);
+    // Verify WhatsApp popup opened with correct message (accept both wa.me and api.whatsapp.com)
+    await expect(popup).toHaveURL(/wa\.me|api\.whatsapp\.com/);
     await popup.close();
   });
 
@@ -104,7 +106,8 @@ test.describe('Feedback Form Tests', () => {
       page.click('button[type="submit"]')
     ]);
     
-    await expect(popup).toHaveURL(/wa.me/);
+    // Verify WhatsApp popup opened with correct message (accept both wa.me and api.whatsapp.com)
+    await expect(popup).toHaveURL(/wa\.me|api\.whatsapp\.com/);
     await popup.close();
   });
 

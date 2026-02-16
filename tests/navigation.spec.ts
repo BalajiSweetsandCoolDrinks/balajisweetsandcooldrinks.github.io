@@ -35,7 +35,7 @@ test.describe('Navigation Tests', () => {
       
       // Check page-specific content
       if (pageInfo.name === 'Home') {
-        await expect(page.locator('.section-title')).toContainText('Flavours for Every Moment');
+        await expect(page.locator('.section-title').first()).toContainText('Flavours for Every Moment');
       }
     }
   });
@@ -80,14 +80,14 @@ test.describe('Navigation Tests', () => {
     // Test Our Story link
     await page.locator('.nav-menu a', { hasText: 'OUR STORY' }).click();
     await expect(page).toHaveURL(/our-story.html/);
-    await expect(page.locator('h1')).toContainText('Our Story');
+    await expect(page.locator('h1').first()).toContainText('Our Story');
     
     // Go back and test Menu link
     await page.goto('/');
     await menuBtn.click();
     await page.locator('.nav-menu a', { hasText: 'MENU' }).click();
     await expect(page).toHaveURL(/menu.html/);
-    await expect(page.locator('h1')).toContainText('Our Menu');
+    await expect(page.locator('h1').first()).toContainText('Our Menu');
   });
 
   test('Home button should navigate to index', async ({ page }) => {

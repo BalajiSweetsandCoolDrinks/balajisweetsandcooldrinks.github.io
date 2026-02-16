@@ -6,7 +6,7 @@ test.describe('Menu Page Tests', () => {
   });
 
   test('menu page should display category buttons', async ({ page }) => {
-    await expect(page.locator('h1')).toContainText('Our Menu');
+    await expect(page.locator('h1').first()).toContainText('Our Menu');
     
     const categories = [
       'ALL',
