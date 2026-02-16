@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Specials - Balaji Sweets</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #c45a3f;
@@ -22,9 +24,13 @@
             --shadow-lg: 0 8px 40px rgba(196, 90, 63, 0.2);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Poppins', Georgia, serif;
             background-color: var(--light);
@@ -34,7 +40,7 @@
             overflow-x: hidden;
             line-height: 1.7;
         }
-        
+
         body::before {
             content: "";
             position: fixed;
@@ -54,7 +60,7 @@
             filter: saturate(0.85);
             will-change: opacity;
         }
-        
+
         @media (max-width: 768px) {
             body::before {
                 opacity: 0.18;
@@ -62,46 +68,61 @@
                 background-position: center center;
             }
         }
-        
+
         @media (max-width: 480px) {
             body::before {
                 opacity: 0.15;
             }
         }
-        
-header { 
+
+        header {
             background: var(--soft-gradient);
-            padding: 15px 20px; 
+            padding: 15px 20px;
             border-bottom: 3px solid var(--accent);
             box-shadow: var(--shadow-sm);
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        
-        header .wrap { 
-            display: flex; 
-            justify-content: flex-end; 
-            align-items: center; 
+
+        header .wrap {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
             flex-wrap: nowrap;
             gap: 10px;
         }
-        header .logo { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 28px; 
-            color: var(--primary); 
+
+        header .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--primary);
             font-weight: 600;
             flex: 0 0 auto;
             text-align: left;
             white-space: nowrap;
         }
+
         header nav {
             flex: 0 0 auto;
             min-width: 0;
         }
-        header a { text-decoration: none; color: var(--dark-light); margin-left: 18px; font-weight: 500; padding: 10px 18px; border-radius: 25px; transition: var(--transition); }
-        header a:hover { color: var(--primary); background: rgba(196, 90, 63, 0.08); }
-        
+
+        header a {
+            text-decoration: none;
+            color: var(--dark-light);
+            margin-left: 18px;
+            font-weight: 500;
+            padding: 10px 18px;
+            border-radius: 25px;
+            transition: var(--transition);
+        }
+
+        header a:hover {
+            color: var(--primary);
+            background: rgba(196, 90, 63, 0.08);
+        }
+
         /* Home button styling - red padded button at end of header */
         .home-btn {
             display: inline-block;
@@ -115,16 +136,24 @@ header {
             letter-spacing: 1px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
-        
+
         .home-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 70px 20px; min-height: calc(100vh - 120px); display: flex; align-items: center; justify-content: center; }
-        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 70px 20px;
+            min-height: calc(100vh - 120px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .coming-soon-box {
             max-width: 650px;
             width: 100%;
@@ -137,7 +166,7 @@ header {
             position: relative;
             overflow: hidden;
         }
-        
+
         .coming-soon-box::before {
             content: '';
             position: absolute;
@@ -147,15 +176,15 @@ header {
             height: 5px;
             background: var(--accent-gradient);
         }
-        
+
         .coming-soon-box h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 68px;
             color: var(--primary);
             margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+
         .coming-soon-box .subtitle {
             font-family: 'Playfair Display', serif;
             font-size: 26px;
@@ -163,7 +192,7 @@ header {
             margin-bottom: 25px;
             font-style: italic;
         }
-        
+
         .coming-soon-box .message {
             font-size: 17px;
             color: var(--dark-light);
@@ -172,7 +201,7 @@ header {
             margin: 0 auto 35px;
             opacity: 0.9;
         }
-        
+
         .back-btn {
             display: inline-block;
             padding: 15px 40px;
@@ -185,39 +214,59 @@ header {
             letter-spacing: 1px;
             transition: var(--transition);
             box-shadow: var(--shadow-md);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
-        
+
         .back-btn:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
-        
+
         @media (max-width: 600px) {
-            .coming-soon-box { padding: 40px 25px; }
-            .coming-soon-box h1 { font-size: 50px; }
-            .coming-soon-box .subtitle { font-size: 22px; }
+            .coming-soon-box {
+                padding: 40px 25px;
+            }
+
+            .coming-soon-box h1 {
+                font-size: 50px;
+            }
+
+            .coming-soon-box .subtitle {
+                font-size: 22px;
+            }
         }
     </style>
     <link rel="stylesheet" href="assets/cart.css">
     <link rel="stylesheet" href="assets/responsive.css">
     <link rel="stylesheet" href="assets/unified-typography.css">
 </head>
+
 <body>
-<header>
-    <div class="logo">Balaji Sweets</div>
-    <div class="wrap">
-        <nav></nav>
-        <a href="index.html" class="home-btn">Home</a>
-    </div>
-</header>
-<main class="container">
-    <div class="coming-soon-box">
-        <h1>Coming Soon</h1>
-        <p class="subtitle">Special Deals Coming Soon!</p>
-        <p class="message">Exclusive offers and seasonal specials.<br>Stay tuned for the grand launch!</p>
-        <a href="index.html" class="back-link">← Back to Home</a>
-    </div>
-</main>
+    <header>
+        <div class="logo">Balaji Sweets</div>
+        <div class="wrap">
+            <nav></nav>
+            <a href="index.html" class="home-btn">Home</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="coming-soon-box">
+            <h1>Coming Soon</h1>
+            <p class="subtitle">Special Deals Coming Soon!</p>
+            <p class="message">Exclusive offers and seasonal specials.<br>Stay tuned for the grand launch!</p>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </main>
+    <a href="cart.html" class="cart-float" aria-label="Open cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+    </a>
 </body>
+
 </html>

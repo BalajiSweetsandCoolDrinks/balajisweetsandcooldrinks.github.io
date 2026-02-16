@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +43,7 @@
             }
         }
 
-header {
+        header {
             background: #f8f3e8;
             padding: 20px;
             border-bottom: 2px solid #e0d2b5;
@@ -96,9 +97,9 @@ header {
             letter-spacing: 1px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
-        
+
         .home-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
@@ -130,7 +131,7 @@ header {
             border: 2px solid #e0d2b5;
             padding: 30px;
             border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
         }
 
         .form-group {
@@ -203,7 +204,7 @@ header {
             background: #fff5eb;
         }
 
-        .feedback-type input[type="radio"]:checked + span {
+        .feedback-type input[type="radio"]:checked+span {
             color: var(--primary);
             font-weight: bold;
         }
@@ -322,265 +323,276 @@ header {
     <link rel="stylesheet" href="assets/responsive.css">
     <link rel="stylesheet" href="assets/unified-typography.css">
 </head>
+
 <body>
 
-<header>
-    <div class="logo">Balaji Sweets</div>
-    <div class="header-wrap">
-        <nav>
-        </nav>
-        <a href="index.html" class="home-btn">Home</a>
-    </div>
-</header>
-
-<main class="container">
-    <h1>Share Your Feedback</h1>
-    <p class="subtitle">Help us serve you better by sharing your experience</p>
-
-    <div class="feedback-card">
-        <form id="feedbackForm" onsubmit="submitFeedback(event)">
-            <!-- Customer Info -->
-            <div class="form-group">
-                <label for="customerName">Your Name (Optional)</label>
-                <input type="text" id="customerName" placeholder="Enter your name">
-            </div>
-
-            <div class="form-group">
-                <label for="contactInfo">Phone or Email (Optional)</label>
-                <input type="text" id="contactInfo" placeholder="We'll contact you if needed">
-            </div>
-
-            <!-- Feedback Type -->
-            <div class="form-group">
-                <label>Feedback About</label>
-                <div class="feedback-type">
-                    <label>
-                        <input type="radio" name="feedbackType" value="sweets" checked>
-                        <span>Sweets Quality</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="feedbackType" value="website">
-                        <span>Website Usability</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="feedbackType" value="service">
-                        <span>Service / Staff</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="feedbackType" value="other">
-                        <span>Other</span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Product Rating (if sweets) -->
-            <div class="form-group" id="productRatingGroup">
-                <label>Rate Our Sweets</label>
-                <div class="rating-group">
-                    <div class="rating-row">
-                        <span class="rating-label">Taste & Freshness</span>
-                        <div class="star-rating" data-rating="tasteRating">
-                            <span data-value="1">★</span>
-                            <span data-value="2">★</span>
-                            <span data-value="3">★</span>
-                            <span data-value="4">★</span>
-                            <span data-value="5">★</span>
-                        </div>
-                    </div>
-                    <div class="rating-row">
-                        <span class="rating-label">Packaging & Presentation</span>
-                        <div class="star-rating" data-rating="packRating">
-                            <span data-value="1">★</span>
-                            <span data-value="2">★</span>
-                            <span data-value="3">★</span>
-                            <span data-value="4">★</span>
-                            <span data-value="5">★</span>
-                        </div>
-                    </div>
-                    <div class="rating-row">
-                        <span class="rating-label">Value for Money</span>
-                        <div class="star-rating" data-rating="valueRating">
-                            <span data-value="1">★</span>
-                            <span data-value="2">★</span>
-                            <span data-value="3">★</span>
-                            <span data-value="4">★</span>
-                            <span data-value="5">★</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Website Rating (if website) -->
-            <div class="form-group" id="websiteRatingGroup" style="display: none;">
-                <label>Rate Website Usability</label>
-                <div class="rating-group">
-                    <div class="rating-row">
-                        <span class="rating-label">Easy to Navigate</span>
-                        <div class="star-rating" data-rating="navRating">
-                            <span data-value="1">★</span>
-                            <span data-value="2">★</span>
-                            <span data-value="3">★</span>
-                            <span data-value="4">★</span>
-                            <span data-value="5">★</span>
-                        </div>
-                    </div>
-                    <div class="rating-row">
-                        <span class="rating-label">Product Information</span>
-                        <div class="star-rating" data-rating="infoRating">
-                            <span data-value="1">★</span>
-                            <span data-value="2">★</span>
-                            <span data-value="3">★</span>
-                            <span data-value="4">★</span>
-                            <span data-value="5">★</span>
-                        </div>
-                    </div>
-                    <div class="rating-row">
-                        <span class="rating-label">Overall Experience</span>
-                        <div class="star-rating" data-rating="expRating">
-                            <span data-value="1">★</span>
-                            <span data-value="2">★</span>
-                            <span data-value="3">★</span>
-                            <span data-value="4">★</span>
-                            <span data-value="5">★</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Comments -->
-            <div class="form-group">
-                <label for="comments">Your Comments & Suggestions</label>
-                <textarea id="comments" placeholder="Tell us more about your experience or suggestions for improvement..."></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">Submit Feedback</button>
-        </form>
-
-        <div class="success-message" id="successMessage">
-            <h2>Thank You!</h2>
-            <p>Your feedback has been received. We appreciate you taking the time to help us improve!</p>
-            <a href="index.html" class="back-link">← Back to Home</a>
+    <header>
+        <div class="logo">Balaji Sweets</div>
+        <div class="header-wrap">
+            <nav>
+            </nav>
+            <a href="index.html" class="home-btn">Home</a>
         </div>
-    </div>
-</main>
+    </header>
 
-<script>
-    // Initialize star ratings with simple click handler
-    document.querySelectorAll('.star-rating').forEach(rating => {
-        const stars = rating.querySelectorAll('span');
-        
-        stars.forEach((star) => {
-            star.addEventListener('click', function() {
-                const value = parseInt(this.dataset.value);
-                // Set stars 1 to value as active
-                stars.forEach((s, i) => {
-                    if (i < value) {
-                        s.classList.add('active');
-                    } else {
-                        s.classList.remove('active');
-                    }
+    <main class="container">
+        <h1>Share Your Feedback</h1>
+        <p class="subtitle">Help us serve you better by sharing your experience</p>
+
+        <div class="feedback-card">
+            <form id="feedbackForm" onsubmit="submitFeedback(event)">
+                <!-- Customer Info -->
+                <div class="form-group">
+                    <label for="customerName">Your Name (Optional)</label>
+                    <input type="text" id="customerName" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="contactInfo">Phone or Email (Optional)</label>
+                    <input type="text" id="contactInfo" placeholder="We'll contact you if needed">
+                </div>
+
+                <!-- Feedback Type -->
+                <div class="form-group">
+                    <label>Feedback About</label>
+                    <div class="feedback-type">
+                        <label>
+                            <input type="radio" name="feedbackType" value="sweets" checked>
+                            <span>Sweets Quality</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="feedbackType" value="website">
+                            <span>Website Usability</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="feedbackType" value="service">
+                            <span>Service / Staff</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="feedbackType" value="other">
+                            <span>Other</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Product Rating (if sweets) -->
+                <div class="form-group" id="productRatingGroup">
+                    <label>Rate Our Sweets</label>
+                    <div class="rating-group">
+                        <div class="rating-row">
+                            <span class="rating-label">Taste & Freshness</span>
+                            <div class="star-rating" data-rating="tasteRating">
+                                <span data-value="1">★</span>
+                                <span data-value="2">★</span>
+                                <span data-value="3">★</span>
+                                <span data-value="4">★</span>
+                                <span data-value="5">★</span>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <span class="rating-label">Packaging & Presentation</span>
+                            <div class="star-rating" data-rating="packRating">
+                                <span data-value="1">★</span>
+                                <span data-value="2">★</span>
+                                <span data-value="3">★</span>
+                                <span data-value="4">★</span>
+                                <span data-value="5">★</span>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <span class="rating-label">Value for Money</span>
+                            <div class="star-rating" data-rating="valueRating">
+                                <span data-value="1">★</span>
+                                <span data-value="2">★</span>
+                                <span data-value="3">★</span>
+                                <span data-value="4">★</span>
+                                <span data-value="5">★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Rating (if website) -->
+                <div class="form-group" id="websiteRatingGroup" style="display: none;">
+                    <label>Rate Website Usability</label>
+                    <div class="rating-group">
+                        <div class="rating-row">
+                            <span class="rating-label">Easy to Navigate</span>
+                            <div class="star-rating" data-rating="navRating">
+                                <span data-value="1">★</span>
+                                <span data-value="2">★</span>
+                                <span data-value="3">★</span>
+                                <span data-value="4">★</span>
+                                <span data-value="5">★</span>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <span class="rating-label">Product Information</span>
+                            <div class="star-rating" data-rating="infoRating">
+                                <span data-value="1">★</span>
+                                <span data-value="2">★</span>
+                                <span data-value="3">★</span>
+                                <span data-value="4">★</span>
+                                <span data-value="5">★</span>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <span class="rating-label">Overall Experience</span>
+                            <div class="star-rating" data-rating="expRating">
+                                <span data-value="1">★</span>
+                                <span data-value="2">★</span>
+                                <span data-value="3">★</span>
+                                <span data-value="4">★</span>
+                                <span data-value="5">★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comments -->
+                <div class="form-group">
+                    <label for="comments">Your Comments & Suggestions</label>
+                    <textarea id="comments"
+                        placeholder="Tell us more about your experience or suggestions for improvement..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                <h2>Thank You!</h2>
+                <p>Your feedback has been received. We appreciate you taking the time to help us improve!</p>
+                <a href="index.html" class="back-link">← Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Initialize star ratings with simple click handler
+        document.querySelectorAll('.star-rating').forEach(rating => {
+            const stars = rating.querySelectorAll('span');
+
+            stars.forEach((star) => {
+                star.addEventListener('click', function () {
+                    const value = parseInt(this.dataset.value);
+                    // Set stars 1 to value as active
+                    stars.forEach((s, i) => {
+                        if (i < value) {
+                            s.classList.add('active');
+                        } else {
+                            s.classList.remove('active');
+                        }
+                    });
+                    // Store the rating value
+                    rating.dataset.value = value;
                 });
-                // Store the rating value
-                rating.dataset.value = value;
             });
         });
-    });
 
-    // Toggle rating groups based on feedback type
-    document.querySelectorAll('input[name="feedbackType"]').forEach(radio => {
-        radio.addEventListener('change', function() {
-            const productGroup = document.getElementById('productRatingGroup');
-            const websiteGroup = document.getElementById('websiteRatingGroup');
-            
-            if (this.value === 'sweets') {
-                productGroup.style.display = 'block';
-                websiteGroup.style.display = 'none';
-            } else if (this.value === 'website') {
-                productGroup.style.display = 'none';
-                websiteGroup.style.display = 'block';
-            } else {
-                productGroup.style.display = 'none';
-                websiteGroup.style.display = 'none';
-            }
+        // Toggle rating groups based on feedback type
+        document.querySelectorAll('input[name="feedbackType"]').forEach(radio => {
+            radio.addEventListener('change', function () {
+                const productGroup = document.getElementById('productRatingGroup');
+                const websiteGroup = document.getElementById('websiteRatingGroup');
+
+                if (this.value === 'sweets') {
+                    productGroup.style.display = 'block';
+                    websiteGroup.style.display = 'none';
+                } else if (this.value === 'website') {
+                    productGroup.style.display = 'none';
+                    websiteGroup.style.display = 'block';
+                } else {
+                    productGroup.style.display = 'none';
+                    websiteGroup.style.display = 'none';
+                }
+            });
         });
-    });
 
-    function submitFeedback(e) {
-        e.preventDefault();
-        
-        const feedbackType = document.querySelector('input[name="feedbackType"]:checked').value;
-        const customerName = document.getElementById('customerName').value;
-        const contactInfo = document.getElementById('contactInfo').value;
-        const comments = document.getElementById('comments').value;
-        
-        // Collect ratings from star elements
-        let ratings = {};
-        if (feedbackType === 'sweets') {
-            const tasteRating = document.querySelector('[data-rating="tasteRating"]');
-            const packRating = document.querySelector('[data-rating="packRating"]');
-            const valueRating = document.querySelector('[data-rating="valueRating"]');
-            ratings.taste = tasteRating?.dataset.value || '0';
-            ratings.packaging = packRating?.dataset.value || '0';
-            ratings.value = valueRating?.dataset.value || '0';
-        } else if (feedbackType === 'website') {
-            const navRating = document.querySelector('[data-rating="navRating"]');
-            const infoRating = document.querySelector('[data-rating="infoRating"]');
-            const expRating = document.querySelector('[data-rating="expRating"]');
-            ratings.navigation = navRating?.dataset.value || '0';
-            ratings.info = infoRating?.dataset.value || '0';
-            ratings.experience = expRating?.dataset.value || '0';
-        }
-        
-        // Format WhatsApp message
-        const typeLabels = {
-            sweets: 'Sweets Quality',
-            website: 'Website Usability',
-            service: 'Service / Staff',
-            other: 'Other'
-        };
-        
-        let message = `*Feedback - Balaji Sweets*\n\n`;
-        message += `*Type:* ${typeLabels[feedbackType]}\n`;
-        if (customerName) message += `*Name:* ${customerName}\n`;
-        if (contactInfo) message += `*Contact:* ${contactInfo}\n`;
-        
-        if (feedbackType === 'sweets') {
-            message += `\n*Taste & Freshness:* ${ratings.taste}/5\n`;
-            message += `*Packaging:* ${ratings.packaging}/5\n`;
-            message += `*Value for Money:* ${ratings.value}/5\n`;
-        } else if (feedbackType === 'website') {
-            message += `\n*Easy to Navigate:* ${ratings.navigation}/5\n`;
-            message += `*Product Info:* ${ratings.info}/5\n`;
-            message += `*Overall Experience:* ${ratings.experience}/5\n`;
-        }
-        
-        if (comments) {
-            message += `\n*Comments:* ${comments}`;
-        }
-        
-        // Send via WhatsApp
-        const whatsappNumber = '+919962899084';
-        const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
-        
-        window.open(whatsappUrl, '_blank');
-        
-        // Show success message
-        document.getElementById('feedbackForm').style.display = 'none';
-        document.getElementById('successMessage').style.display = 'block';
-    }
-</script>
+        function submitFeedback(e) {
+            e.preventDefault();
 
-<a href="#" class="cart-float" id="cartBtn" aria-label="Open cart">🛒<span class="cart-count" id="cartCount">0</span></a>
-<div class="cart-modal" id="cartModal" aria-hidden="true">
-    <h3>Your Cart</h3>
-    <div id="cartItems"></div>
-    <div class="cart-actions">
-        <button id="clearCart">Clear</button>
-        <button id="checkout">Checkout via WhatsApp</button>
+            const feedbackType = document.querySelector('input[name="feedbackType"]:checked').value;
+            const customerName = document.getElementById('customerName').value;
+            const contactInfo = document.getElementById('contactInfo').value;
+            const comments = document.getElementById('comments').value;
+
+            // Collect ratings from star elements
+            let ratings = {};
+            if (feedbackType === 'sweets') {
+                const tasteRating = document.querySelector('[data-rating="tasteRating"]');
+                const packRating = document.querySelector('[data-rating="packRating"]');
+                const valueRating = document.querySelector('[data-rating="valueRating"]');
+                ratings.taste = tasteRating?.dataset.value || '0';
+                ratings.packaging = packRating?.dataset.value || '0';
+                ratings.value = valueRating?.dataset.value || '0';
+            } else if (feedbackType === 'website') {
+                const navRating = document.querySelector('[data-rating="navRating"]');
+                const infoRating = document.querySelector('[data-rating="infoRating"]');
+                const expRating = document.querySelector('[data-rating="expRating"]');
+                ratings.navigation = navRating?.dataset.value || '0';
+                ratings.info = infoRating?.dataset.value || '0';
+                ratings.experience = expRating?.dataset.value || '0';
+            }
+
+            // Format WhatsApp message
+            const typeLabels = {
+                sweets: 'Sweets Quality',
+                website: 'Website Usability',
+                service: 'Service / Staff',
+                other: 'Other'
+            };
+
+            let message = `*Feedback - Balaji Sweets*\n\n`;
+            message += `*Type:* ${typeLabels[feedbackType]}\n`;
+            if (customerName) message += `*Name:* ${customerName}\n`;
+            if (contactInfo) message += `*Contact:* ${contactInfo}\n`;
+
+            if (feedbackType === 'sweets') {
+                message += `\n*Taste & Freshness:* ${ratings.taste}/5\n`;
+                message += `*Packaging:* ${ratings.packaging}/5\n`;
+                message += `*Value for Money:* ${ratings.value}/5\n`;
+            } else if (feedbackType === 'website') {
+                message += `\n*Easy to Navigate:* ${ratings.navigation}/5\n`;
+                message += `*Product Info:* ${ratings.info}/5\n`;
+                message += `*Overall Experience:* ${ratings.experience}/5\n`;
+            }
+
+            if (comments) {
+                message += `\n*Comments:* ${comments}`;
+            }
+
+            // Send via WhatsApp
+            const whatsappNumber = '+919962899084';
+            const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+
+            window.open(whatsappUrl, '_blank');
+
+            // Show success message
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        }
+    </script>
+
+    <a href="cart.html" class="cart-float" aria-label="Open cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+    </a>
+    <div class="cart-modal" id="cartModal" aria-hidden="true">
+        <h3>Your Cart</h3>
+        <div id="cartItems"></div>
+        <div class="cart-actions">
+            <button id="clearCart">Clear</button>
+            <button id="checkout">Checkout via WhatsApp</button>
+        </div>
     </div>
-</div>
-<script src="assets/cart.js"></script>
-<div id="toast" role="status" aria-live="polite"></div>
+    <script src="assets/cart.js"></script>
+    <div id="toast" role="status" aria-live="polite"></div>
 
 </body>
+
 </html>

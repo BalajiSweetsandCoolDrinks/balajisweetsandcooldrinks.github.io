@@ -1,57 +1,32 @@
 # Dependencies
 node_modules/
 package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
-# Playwright
+# Playwright test artifacts
 test-results/
 playwright-report/
-playwright/.cache/
 
-# Screenshots and videos
-screenshots/
-videos/
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.mp4
-*.webm
+# Playwright trace files
+*.trace.zip
 
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# OS-specific files
+.DS_Store
+Thumbs.db
 
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# IDE
+# IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
 
-# OS
-.DS_Store
-Thumbs.db
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
 
 # Build outputs
 dist/
 build/
-out/
-
-# Coverage
-coverage/
-.nyc_output/
-
-# Temporary files
-tmp/
-temp/
-*.tmp
