@@ -1,7 +1,8 @@
 {
-  "name": "balaji-sweets-automation-tests",
+  "name": "balajisweetsandcooldrinks.github.io",
   "version": "1.0.0",
-  "description": "Automation testing framework for Balaji Sweets website",
+  "description": "A responsive e-commerce website for Balaji Sweets, featuring product catalogs, shopping cart functionality, and WhatsApp integration for orders.",
+  "main": "index.js",
   "scripts": {
     "test": "playwright test",
     "test:ui": "playwright test --ui",
@@ -10,21 +11,25 @@
     "test:chrome": "playwright test --project=chromium",
     "test:firefox": "playwright test --project=firefox",
     "test:webkit": "playwright test --project=webkit",
-    "test:mobile": "playwright test --project='Mobile Chrome'",
-    "report": "playwright show-report",
-    "install:browsers": "playwright install"
+    "test:mobile": "playwright test --project='Mobile Chrome' --project='Mobile Safari'",
+    "test:report": "playwright show-report",
+    "test:update-snapshots": "playwright test --update-snapshots"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BalajiSweetsandCoolDrinks/BalajiSweetsandCoolDrinks.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/BalajiSweetsandCoolDrinks/BalajiSweetsandCoolDrinks.github.io/issues"
+  },
+  "homepage": "https://github.com/BalajiSweetsandCoolDrinks/BalajiSweetsandCoolDrinks.github.io#readme",
   "devDependencies": {
-    "@playwright/test": "^1.40.0",
-    "@types/node": "^20.10.0"
-  },
-  "keywords": [
-    "playwright",
-    "automation",
-    "testing",
-    "e2e",
-    "website-testing"
-  ],
-  "author": "Balaji Sweets",
-  "license": "MIT"
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.3",
+    "typescript": "^5.9.3"
+  }
 }
