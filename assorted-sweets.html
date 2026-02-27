@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assorted Sweets - Balaji Sweets</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/unified-styles.css">
     <link rel="stylesheet" href="assets/responsive.css">
     <link rel="stylesheet" href="assets/cart.css">
     <style>
-        body { --watermark-image: url('images/indian-sweets.jpg'); --watermark-opacity: 0.25; }
-        body.has-watermark::before { background-image: var(--watermark-image); }
-        
+        body {
+            --watermark-image: url('images/indian-sweets.jpg');
+            --watermark-opacity: 0.25;
+        }
+
+        body.has-watermark::before {
+            background-image: var(--watermark-image);
+        }
+
         /* Home button styling - red padded button at end of header */
         .home-btn {
             display: inline-block;
@@ -25,46 +33,48 @@
             letter-spacing: 1px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
-        
+
         .home-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
         }
     </style>
 </head>
+
 <body class="has-watermark">
 
-<header>
-    <div class="wrap">
-        <div class="logo">Balaji Sweets</div>
-        <nav>
-        </nav>
-        <a href="index.html" class="home-btn">Home</a>
-    </div>
-</header>
-
-<main class="container-with-bg">
-    <h1>Assorted Sweets</h1>
-    <div class="menu-grid">
-        <div class="menu-item" onclick="openProduct('ASSORTED SWEETS', 300, 'images/indian-sweets.jpg')">
-            <img src="images/indian-sweets.jpg" alt="Assorted Sweets">
-            <div class="menu-title">ASSORTED SWEETS</div>
-            <div class="menu-price">From ₹ 300</div>
+    <header>
+        <div class="wrap">
+            <div class="logo">Balaji Sweets</div>
+            <nav>
+            </nav>
+            <a href="index.html" class="home-btn">Home</a>
         </div>
-    </div>
-    <div style="text-align: center;">
-        <a class="back-link" href="index.html">← Back to Home</a>
-    </div>
-</main>
+    </header>
 
-<!-- Shared Components -->
-<div id="modal-container"></div>
-<div id="cart-container"></div>
+    <main class="container-with-bg">
+        <h1> Assorted Sweets </h1>
+        <div class="menu-grid">
+            <div class="menu-item" onclick="openProduct('ASSORTED SWEETS', 300, 'images/indian-sweets.jpg')">
+                <img src="images/indian-sweets.jpg" alt="Assorted Sweets">
+                <div class="menu-title">ASSORTED SWEETS</div>
+                <div class="menu-price">From ₹ 300</div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a class="back-link" href="index.html">← Back to Home</a>
+        </div>
+    </main>
 
-<script src="assets/cart.js"></script>
-<script src="assets/product-modal.js"></script>
+    <!-- Shared Components -->
+    <div id="modal-container"></div>
+    <div id="cart-container"></div>
+
+    <script src="assets/cart.js"></script>
+    <script src="assets/product-modal.js"></script>
 
 </body>
+
 </html>

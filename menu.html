@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Balaji Sweets</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         /* CSS Variables for Easy Theming */
         :root {
@@ -15,25 +18,25 @@
             --secondary: #f5e6d3;
             --accent: #d4a017;
             --accent-light: #e8b84a;
-            
+
             /* Neutrals */
             --dark: #3d2814;
             --dark-light: #5c4033;
             --light: #fffdf8;
             --light-gray: #f8f5f0;
             --white: #ffffff;
-            
+
             /* Gradients */
             --primary-gradient: linear-gradient(135deg, #c45a3f 0%, #a04535 100%);
             --accent-gradient: linear-gradient(135deg, #d4a017 0%, #b8860b 100%);
             --soft-gradient: linear-gradient(180deg, #fff 0%, var(--secondary) 100%);
-            
+
             /* Shadows */
             --shadow-sm: 0 2px 8px rgba(196, 90, 63, 0.08);
             --shadow-md: 0 4px 20px rgba(196, 90, 63, 0.12);
             --shadow-lg: 0 8px 40px rgba(196, 90, 63, 0.16);
             --shadow-hover: 0 12px 50px rgba(196, 90, 63, 0.22);
-            
+
             /* Transitions */
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -91,9 +94,9 @@
             }
         }
 
-header { 
+        header {
             background: var(--soft-gradient);
-            padding: 15px 20px; 
+            padding: 15px 20px;
             border-bottom: 3px solid var(--accent);
             box-shadow: var(--shadow-sm);
             display: flex;
@@ -169,9 +172,9 @@ header {
             letter-spacing: 1px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
-        
+
         .home-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
@@ -190,7 +193,7 @@ header {
             color: var(--primary);
             text-align: center;
             margin-bottom: 45px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .menu-grid {
@@ -281,7 +284,7 @@ header {
             letter-spacing: 1px;
             transition: var(--transition);
             box-shadow: var(--shadow-md);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .back:hover {
@@ -297,11 +300,11 @@ header {
             gap: 12px;
             padding: 20px 30px;
             margin-bottom: 30px;
-            background: linear-gradient(90deg, 
-                rgba(196, 90, 63, 0.05) 0%, 
-                rgba(245, 230, 211, 0.9) 15%, 
-                rgba(245, 230, 211, 0.9) 85%, 
-                rgba(196, 90, 63, 0.05) 100%);
+            background: linear-gradient(90deg,
+                    rgba(196, 90, 63, 0.05) 0%,
+                    rgba(245, 230, 211, 0.9) 15%,
+                    rgba(245, 230, 211, 0.9) 85%,
+                    rgba(196, 90, 63, 0.05) 100%);
             border-radius: 50px;
             border-left: 1px solid rgba(196, 90, 63, 0.1);
             border-right: 1px solid rgba(196, 90, 63, 0.1);
@@ -524,7 +527,7 @@ header {
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             z-index: 2000;
             justify-content: center;
             align-items: center;
@@ -538,7 +541,7 @@ header {
             border-radius: 20px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         .product-modal img {
@@ -558,7 +561,7 @@ header {
             font-size: 32px;
             cursor: pointer;
             color: #fff;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             width: 42px;
             height: 42px;
             border-radius: 50%;
@@ -570,7 +573,7 @@ header {
         }
 
         .close-modal:hover {
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             transform: scale(1.1);
         }
 
@@ -693,7 +696,7 @@ header {
             color: #fff;
             padding: 14px 20px;
             border-radius: 10px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
             z-index: 1300;
             display: none;
             font-weight: 500;
@@ -836,249 +839,256 @@ header {
     <link rel="stylesheet" href="assets/responsive.css">
     <link rel="stylesheet" href="assets/unified-typography.css">
 </head>
+
 <body>
 
-<header>
-    <div class="logo">Balaji Sweets</div>
-    <div class="wrap">
-        <nav>
-        </nav>
-        <a href="index.html" class="home-btn">Home</a>
-    </div>
-</header>
+    <header>
+        <div class="logo">Balaji Sweets</div>
+        <div class="wrap">
+            <nav>
+            </nav>
+            <a href="index.html" class="home-btn">Home</a>
+        </div>
+    </header>
 
-<main class="container">
-    <h1>Our Menu</h1>
-    
-    <!-- Horizontal Category Bar -->
-    <div class="category-bar">
-        <button class="category-link" onclick="filterCategory('all')">ALL</button>
-        <button class="category-link" onclick="filterCategory('kaju')">KAJU VARIETY</button>
-        <button class="category-link" onclick="filterCategory('kalakand')">KALAKAND</button>
-        <button class="category-link" onclick="filterCategory('sugarfree')">SUGAR FREE</button>
-        <button class="category-link" onclick="filterCategory('baklava')">BAKLAVA</button>
-        <button class="category-link" onclick="filterCategory('ladoo')">LADOO</button>
-        <button class="category-link" onclick="filterCategory('palakova')">PALAKOVA</button>
-        <button class="category-link" onclick="filterCategory('bengali')">BENGALI SWEETS</button>
-        <button class="category-link" onclick="filterCategory('assorted')">ASSORTED SWEETS</button>
-        <button class="category-link" onclick="filterCategory('namkeen')">NAMKEEN</button>
-        <button class="category-link" onclick="filterCategory('snacks')">SNACKS</button>
-        <button class="category-link" onclick="filterCategory('dryfruits')">DRY FRUITS</button>
-        <button class="category-link" onclick="filterCategory('drinks')">COOL DRINKS</button>
-    </div>
+    <main class="container">
+        <h1>Our Menu</h1>
 
-    <!-- Category Products Display -->
-    <div id="category-products" class="menu-grid"></div>
-    
-    <!-- Coming Soon Message -->
-    <div id="coming-soon-message" class="coming-soon-box" style="display: none;">
-        <h1>Coming Soon</h1>
-        <p class="subtitle" id="coming-soon-subtitle"></p>
-        <p class="message" id="coming-soon-msg"></p>
-    </div>
+        <!-- Horizontal Category Bar -->
+        <div class="category-bar">
+            <button class="category-link" onclick="filterCategory('all')">ALL</button>
+            <button class="category-link" onclick="filterCategory('kaju')">KAJU VARIETY</button>
+            <button class="category-link" onclick="filterCategory('kalakand')">KALAKAND</button>
+            <button class="category-link" onclick="filterCategory('sugarfree')">SUGAR FREE</button>
+            <button class="category-link" onclick="filterCategory('baklava')">BAKLAVA</button>
+            <button class="category-link" onclick="filterCategory('ladoo')">LADOO</button>
+            <button class="category-link" onclick="filterCategory('palakova')">PALAKOVA</button>
+            <button class="category-link" onclick="filterCategory('bengali')">BENGALI SWEETS</button>
+            <button class="category-link" onclick="filterCategory('assorted')">ASSORTED SWEETS</button>
+            <button class="category-link" onclick="filterCategory('namkeen')">NAMKEEN</button>
+            <button class="category-link" onclick="filterCategory('snacks')">SNACKS</button>
+            <button class="category-link" onclick="filterCategory('dryfruits')">DRY FRUITS</button>
+            <button class="category-link" onclick="filterCategory('drinks')">COOL DRINKS</button>
+        </div>
 
-    <div style="text-align: center;">
-        <a class="back-link" href="index.html">← Back to Home</a>
-    </div>
-</main>
+        <!-- Category Products Display -->
+        <div id="category-products" class="menu-grid"></div>
 
-<div class="modal-overlay" id="modalOverlay">
-    <div class="product-modal">
-        <span class="close-modal" id="closeModal">&times;</span>
-        <img id="modalImg" src="" style="width:100%; height:250px; object-fit:cover;">
-        
-        <div class="modal-body">
-            <h2 id="modalTitle" style="margin:0; color:#c45a3f; font-family:'Playfair Display', serif;"></h2>
-            <p id="modalPrice" style="font-size:26px; font-weight:700; margin:12px 0 22px; color:#c45a3f;"></p>
-            
-            <span class="option-label">Size:</span>
-            <div class="size-container">
-                <button class="size-btn active" onclick="updateSize(0.25, this)">250 Gms</button>
-                <button class="size-btn" onclick="updateSize(0.5, this)">500 Gms</button>
-                <button class="size-btn" onclick="updateSize(1.0, this)">1 kg</button>
-            </div>
+        <!-- Coming Soon Message -->
+        <div id="coming-soon-message" class="coming-soon-box" style="display: none;">
+            <h1>Coming Soon</h1>
+            <p class="subtitle" id="coming-soon-subtitle"></p>
+            <p class="message" id="coming-soon-msg"></p>
+        </div>
 
-            <div class="action-row">
-                <div class="qty-input">
-                    <button class="qty-btn" onclick="updateQty(-1)">-</button>
-                    <span id="qtyVal">1</span>
-                    <button class="qty-btn" onclick="updateQty(1)">+</button>
+        <div style="text-align: center;">
+            <a class="back-link" href="index.html">← Back to Home</a>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="product-modal">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <img id="modalImg" src="" style="width:100%; height:250px; object-fit:cover;">
+
+            <div class="modal-body">
+                <h2 id="modalTitle" style="margin:0; color:#c45a3f; font-family:'Playfair Display', serif;"></h2>
+                <p id="modalPrice" style="font-size:26px; font-weight:700; margin:12px 0 22px; color:#c45a3f;"></p>
+
+                <span class="option-label">Size:</span>
+                <div class="size-container">
+                    <button class="size-btn active" onclick="updateSize(0.25, this)">250 Gms</button>
+                    <button class="size-btn" onclick="updateSize(0.5, this)">500 Gms</button>
+                    <button class="size-btn" onclick="updateSize(1.0, this)">1 kg</button>
                 </div>
-                <button class="add-btn" onclick="addToCart()">ADD TO CART</button>
+
+                <div class="action-row">
+                    <div class="qty-input">
+                        <button class="qty-btn" onclick="updateQty(-1)">-</button>
+                        <span id="qtyVal">1</span>
+                        <button class="qty-btn" onclick="updateQty(1)">+</button>
+                    </div>
+                    <button class="add-btn" onclick="addToCart()">ADD TO CART</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    // Product data organized by category
-    const categoryProducts = {
-        'kaju': [
-            { name: 'KAJU KATLI', price: 500, image: 'images/kaju-variety.jpg' }
-        ],
-        'ladoo': [
-            { name: 'MOTICHOOR LADOO', price: 200, image: 'images/motichoor-ladoo.jpg' }
-        ],
-        'assorted': [
-            { name: 'ASSORTED SWEETS', price: 300, image: 'images/indian-sweets.jpg' }
-        ],
-        // Categories with no products yet
-        'kalakand': [],
-        'sugarfree': [],
-        'baklava': [],
-        'palakova': [],
-        'bengali': [],
-        'namkeen': [],
-        'snacks': [],
-        'dryfruits': [],
-        'drinks': []
-    };
+    <script>
+        // Product data organized by category
+        const categoryProducts = {
+            'kaju': [
+                { name: 'KAJU KATLI', price: 500, image: 'images/kaju-variety.jpg' }
+            ],
+            'ladoo': [
+                { name: 'MOTICHOOR LADOO', price: 200, image: 'images/motichoor-ladoo.jpg' }
+            ],
+            'assorted': [
+                { name: 'ASSORTED SWEETS', price: 300, image: 'images/indian-sweets.jpg' }
+            ],
+            // Categories with no products yet
+            'kalakand': [],
+            'sugarfree': [],
+            'baklava': [],
+            'palakova': [],
+            'bengali': [],
+            'namkeen': [],
+            'snacks': [],
+            'dryfruits': [],
+            'drinks': []
+        };
 
-    // Coming soon messages for each category
-    const comingSoonMessages = {
-        'kalakand': { subtitle: 'Delicious Kalakand Coming Soon!', message: 'Traditional milk sweet with premium quality.<br>Stay tuned for the grand launch!' },
-        'sugarfree': { subtitle: 'Sugar-Free Delights Coming Soon!', message: 'Healthy sweets without compromising on taste.<br>Stay tuned for the grand launch!' },
-        'baklava': { subtitle: 'Delicious Baklava Coming Soon!', message: 'Premium baked sweet with layers of filo pastry, nuts and honey syrup.<br>Stay tuned for the grand launch!' },
-        'palakova': { subtitle: 'Delicious Palakova Coming Soon!', message: 'Traditional milk-based sweet with rich caramelized flavor.<br>Stay tuned for the grand launch!' },
-        'bengali': { subtitle: 'Authentic Bengali Sweets Coming Soon!', message: 'Rasgulla, Sandesh, and more.<br>Stay tuned for the grand launch!' },
-        'namkeen': { subtitle: 'Crispy Namkeen Coming Soon!', message: 'Perfect snacking companion coming soon.<br>Stay tuned for the grand launch!' },
-        'snacks': { subtitle: 'Tasty Snacks Coming Soon!', message: 'Crispy and delicious snacks for every occasion.<br>Stay tuned for the grand launch!' },
-        'dryfruits': { subtitle: 'Premium Dry Fruits Coming Soon!', message: 'Assorted premium dry fruits for gifting.<br>Stay tuned for the grand launch!' },
-        'drinks': { subtitle: 'Cool Drinks Coming Soon!', message: 'Refreshing beverages to quench your thirst.<br>Stay tuned for the grand launch!' }
-    };
+        // Coming soon messages for each category
+        const comingSoonMessages = {
+            'kalakand': { subtitle: 'Delicious Kalakand Coming Soon!', message: 'Traditional milk sweet with premium quality.<br>Stay tuned for the grand launch!' },
+            'sugarfree': { subtitle: 'Sugar-Free Delights Coming Soon!', message: 'Healthy sweets without compromising on taste.<br>Stay tuned for the grand launch!' },
+            'baklava': { subtitle: 'Delicious Baklava Coming Soon!', message: 'Premium baked sweet with layers of filo pastry, nuts and honey syrup.<br>Stay tuned for the grand launch!' },
+            'palakova': { subtitle: 'Delicious Palakova Coming Soon!', message: 'Traditional milk-based sweet with rich caramelized flavor.<br>Stay tuned for the grand launch!' },
+            'bengali': { subtitle: 'Authentic Bengali Sweets Coming Soon!', message: 'Rasgulla, Sandesh, and more.<br>Stay tuned for the grand launch!' },
+            'namkeen': { subtitle: 'Crispy Namkeen Coming Soon!', message: 'Perfect snacking companion coming soon.<br>Stay tuned for the grand launch!' },
+            'snacks': { subtitle: 'Tasty Snacks Coming Soon!', message: 'Crispy and delicious snacks for every occasion.<br>Stay tuned for the grand launch!' },
+            'dryfruits': { subtitle: 'Premium Dry Fruits Coming Soon!', message: 'Assorted premium dry fruits for gifting.<br>Stay tuned for the grand launch!' },
+            'drinks': { subtitle: 'Cool Drinks Coming Soon!', message: 'Refreshing beverages to quench your thirst.<br>Stay tuned for the grand launch!' }
+        };
 
-    // All products combined
-    const allProducts = [
-        { name: 'MOTICHOOR LADOO', price: 200, image: 'images/motichoor-ladoo.jpg', category: 'ladoo' },
-        { name: 'KAJU KATLI', price: 500, image: 'images/kaju-variety.jpg', category: 'kaju' },
-        { name: 'ASSORTED SWEETS', price: 300, image: 'images/indian-sweets.jpg', category: 'assorted' }
-    ];
+        // All products combined
+        const allProducts = [
+            { name: 'MOTICHOOR LADOO', price: 200, image: 'images/motichoor-ladoo.jpg', category: 'ladoo' },
+            { name: 'KAJU KATLI', price: 500, image: 'images/kaju-variety.jpg', category: 'kaju' },
+            { name: 'ASSORTED SWEETS', price: 300, image: 'images/indian-sweets.jpg', category: 'assorted' }
+        ];
 
-    // Function to create product HTML
-    function createProductItem(product) {
-        return `
+        // Function to create product HTML
+        function createProductItem(product) {
+            return `
             <div class="menu-item" onclick="openProduct('${product.name}', ${product.price}, '${product.image}')">
                 <img src="${product.image}" alt="${product.name}">
                 <div class="menu-title">${product.name}</div>
                 <div class="menu-price">From ₹ ${product.price}</div>
             </div>
         `;
-    }
+        }
 
-    // Function to filter by category
-    function filterCategory(category) {
-        const productsContainer = document.getElementById('category-products');
-        const comingSoonMsg = document.getElementById('coming-soon-message');
-        const subtitleEl = document.getElementById('coming-soon-subtitle');
-        const msgEl = document.getElementById('coming-soon-msg');
-        
-        if (category === 'all') {
-            // Show all products
-            productsContainer.innerHTML = allProducts.map(p => createProductItem(p)).join('');
-            comingSoonMsg.style.display = 'none';
-            productsContainer.style.display = 'grid';
-        } else {
-            const products = categoryProducts[category] || [];
-            
-            if (products.length > 0) {
-                // Show products for this category
-                productsContainer.innerHTML = products.map(p => createProductItem(p)).join('');
+        // Function to filter by category
+        function filterCategory(category) {
+            const productsContainer = document.getElementById('category-products');
+            const comingSoonMsg = document.getElementById('coming-soon-message');
+            const subtitleEl = document.getElementById('coming-soon-subtitle');
+            const msgEl = document.getElementById('coming-soon-msg');
+
+            if (category === 'all') {
+                // Show all products
+                productsContainer.innerHTML = allProducts.map(p => createProductItem(p)).join('');
                 comingSoonMsg.style.display = 'none';
                 productsContainer.style.display = 'grid';
             } else {
-                // Show coming soon message
-                const msg = comingSoonMessages[category];
-                if (msg) {
-                    subtitleEl.textContent = msg.subtitle;
-                    msgEl.innerHTML = msg.message;
-                    productsContainer.style.display = 'none';
-                    comingSoonMsg.style.display = 'block';
+                const products = categoryProducts[category] || [];
+
+                if (products.length > 0) {
+                    // Show products for this category
+                    productsContainer.innerHTML = products.map(p => createProductItem(p)).join('');
+                    comingSoonMsg.style.display = 'none';
+                    productsContainer.style.display = 'grid';
+                } else {
+                    // Show coming soon message
+                    const msg = comingSoonMessages[category];
+                    if (msg) {
+                        subtitleEl.textContent = msg.subtitle;
+                        msgEl.innerHTML = msg.message;
+                        productsContainer.style.display = 'none';
+                        comingSoonMsg.style.display = 'block';
+                    }
                 }
             }
+
+            // Scroll to products section
+            productsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        
-        // Scroll to products section
-        productsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
 
-    // Initialize with all products shown
-    document.addEventListener('DOMContentLoaded', function() {
-        filterCategory('all');
-    });
+        // Initialize with all products shown
+        document.addEventListener('DOMContentLoaded', function () {
+            filterCategory('all');
+        });
 
-    let productState = {
-        name: '',
-        basePrice: 0,
-        currentWeight: 0.25,
-        quantity: 1,
-        image: ''
-    };
-
-    function openProduct(name, price, img) {
-        productState = { name: name, basePrice: price, currentWeight: 0.25, quantity: 1, image: img };
-        
-        document.getElementById('modalTitle').innerText = name;
-        document.getElementById('modalImg').src = img;
-        document.getElementById('qtyVal').innerText = 1;
-        
-        document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
-        document.querySelector('.size-btn').classList.add('active');
-        
-        calculatePrice();
-        document.getElementById('modalOverlay').style.display = 'flex';
-    }
-
-    function updateSize(weight, btn) {
-        productState.currentWeight = weight;
-        document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        calculatePrice();
-    }
-
-    function updateQty(val) {
-        productState.quantity = Math.max(1, productState.quantity + val);
-        document.getElementById('qtyVal').innerText = productState.quantity;
-        calculatePrice();
-    }
-
-    function calculatePrice() {
-        const unitCount = productState.currentWeight / 0.25;
-        const total = (productState.basePrice * unitCount) * productState.quantity;
-        document.getElementById('modalPrice').innerText = "₹ " + total.toLocaleString();
-    }
-
-    function addToCart() {
-        const weightLabel = productState.currentWeight < 1 ? (productState.currentWeight * 1000) + "Gms" : "1kg";
-        const item = {
-            id: productState.name.replace(/\s+/g,'-').toLowerCase() + '-' + (productState.currentWeight < 1 ? Math.round(productState.currentWeight * 1000) + 'g' : '1kg'),
-            title: productState.name,
-            price: productState.basePrice * (productState.currentWeight/0.25),
-            qty: productState.quantity,
-            weight: weightLabel,
-            image: productState.image
+        let productState = {
+            name: '',
+            basePrice: 0,
+            currentWeight: 0.25,
+            quantity: 1,
+            image: ''
         };
-        addToCartItem(item);
-        closeModalFunc();
-    }
 
-    function closeModalFunc() {
-        document.getElementById('modalOverlay').style.display = 'none';
-    }
+        function openProduct(name, price, img) {
+            productState = { name: name, basePrice: price, currentWeight: 0.25, quantity: 1, image: img };
 
-    document.getElementById('closeModal').onclick = closeModalFunc;
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('modalOverlay')) closeModalFunc();
-    }
-</script>
+            document.getElementById('modalTitle').innerText = name;
+            document.getElementById('modalImg').src = img;
+            document.getElementById('qtyVal').innerText = 1;
 
-        <!-- Cart Page Link -->
-        <a href="cart.html" class="cart-float" aria-label="Open cart">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-            <span class="cart-count" id="cartCount">0</span>
-        </a>
-        
-        <script src="assets/cart.js"></script>
-<div id="toast" role="status" aria-live="polite"></div>
+            document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.size-btn').classList.add('active');
+
+            calculatePrice();
+            document.getElementById('modalOverlay').style.display = 'flex';
+        }
+
+        function updateSize(weight, btn) {
+            productState.currentWeight = weight;
+            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            calculatePrice();
+        }
+
+        function updateQty(val) {
+            productState.quantity = Math.max(1, productState.quantity + val);
+            document.getElementById('qtyVal').innerText = productState.quantity;
+            calculatePrice();
+        }
+
+        function calculatePrice() {
+            const unitCount = productState.currentWeight / 0.25;
+            const total = (productState.basePrice * unitCount) * productState.quantity;
+            document.getElementById('modalPrice').innerText = "₹ " + total.toLocaleString();
+        }
+
+        function addToCart() {
+            const weightLabel = productState.currentWeight < 1 ? (productState.currentWeight * 1000) + "Gms" : "1kg";
+            const item = {
+                id: productState.name.replace(/\s+/g, '-').toLowerCase() + '-' + (productState.currentWeight < 1 ? Math.round(productState.currentWeight * 1000) + 'g' : '1kg'),
+                title: productState.name,
+                price: productState.basePrice * (productState.currentWeight / 0.25),
+                qty: productState.quantity,
+                weight: weightLabel,
+                image: productState.image
+            };
+            addToCartItem(item);
+            closeModalFunc();
+        }
+
+        function closeModalFunc() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+
+        document.getElementById('closeModal').onclick = closeModalFunc;
+        window.onclick = function (event) {
+            if (event.target == document.getElementById('modalOverlay')) closeModalFunc();
+        }
+    </script>
+
+    <!-- Cart Page Link -->
+    <a href="cart.html" class="cart-float" aria-label="Open cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+    </a>
+
+    <script src="assets/cart.js"></script>
+    <div id="toast" role="status" aria-live="polite"></div>
 
 </body>
+
 </html>

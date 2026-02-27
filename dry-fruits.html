@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dry Fruits - Balaji Sweets</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/unified-styles.css">
     <link rel="stylesheet" href="assets/responsive.css">
     <link rel="stylesheet" href="assets/cart.css">
     <style>
-        body { --watermark-image: url('images/dry-fruits.jpg'); --watermark-opacity: 0.25; }
-        body.has-watermark::before { background-image: var(--watermark-image); }
-        .coming-soon-container { display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 120px); }
-        
+        body {
+            --watermark-image: url('images/dry-fruits.jpg');
+            --watermark-opacity: 0.25;
+        }
+
+        body.has-watermark::before {
+            background-image: var(--watermark-image);
+        }
+
+        .coming-soon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 120px);
+        }
+
         /* Home button styling - red padded button at end of header */
         .home-btn {
             display: inline-block;
@@ -26,34 +40,36 @@
             letter-spacing: 1px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
-        
+
         .home-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
         }
     </style>
 </head>
+
 <body class="has-watermark">
 
-<header>
-    <div class="wrap">
-        <div class="logo">Balaji Sweets</div>
-        <nav>
-        </nav>
-        <a href="index.html" class="home-btn">Home</a>
-    </div>
-</header>
+    <header>
+        <div class="wrap">
+            <div class="logo">Balaji Sweets</div>
+            <nav>
+            </nav>
+            <a href="index.html" class="home-btn">Home</a>
+        </div>
+    </header>
 
-<main class="container coming-soon-container">
-    <div class="coming-soon-box">
-        <h1>Coming Soon</h1>
-        <p class="subtitle">Premium Dry Fruits Coming Soon!</p>
-        <p class="message">Assorted premium dry fruits for gifting.<br>Stay tuned for the grand launch!</p>
-        <a href="index.html" class="back-btn">← Back to Home</a>
-    </div>
-</main>
+    <main class="container coming-soon-container">
+        <div class="coming-soon-box">
+            <h1>Coming Soon</h1>
+            <p class="subtitle">Premium Dry Fruits Coming Soon!</p>
+            <p class="message">Assorted premium dry fruits for gifting.<br>Stay tuned for the grand launch!</p>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </div>
+    </main>
 
 </body>
+
 </html>

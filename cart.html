@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - Balaji Sweets</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         /* CSS Variables */
         :root {
@@ -36,9 +38,9 @@
         }
 
         /* Header */
-        header { 
+        header {
             background: var(--soft-gradient);
-            padding: 15px 20px; 
+            padding: 15px 20px;
             border-bottom: 3px solid var(--accent);
             box-shadow: var(--shadow-sm);
             display: flex;
@@ -101,9 +103,9 @@
             letter-spacing: 1px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 15px rgba(196, 90, 63, 0.3);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
-        
+
         .home-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(196, 90, 63, 0.4);
@@ -340,7 +342,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1000;
             align-items: center;
             justify-content: center;
@@ -357,7 +359,7 @@
             padding: 30px;
             max-width: 450px;
             width: 100%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
         }
 
         .checkout-dialog h3 {
@@ -505,21 +507,22 @@
     </style>
     <link rel="stylesheet" href="assets/unified-typography.css">
 </head>
+
 <body>
 
-<header>
-    <div class="logo">Balaji Sweets</div>
-    <div class="wrap">
-        <nav>
-        </nav>
-        <a href="index.html" class="home-btn">Home</a>
-    </div>
-</header>
+    <header>
+        <div class="logo">Balaji Sweets</div>
+        <div class="wrap">
+            <nav>
+            </nav>
+            <a href="index.html" class="home-btn">Home</a>
+        </div>
+    </header>
 
-<main class="container">
-    <h1>Shopping Cart</h1>
-    
-    <div class="cart-container">
+    <main class="container">
+        <h1>Shopping Cart</h1>
+
+        <div class="cart-container">
             <div id="cartContent" class="cart-items">
                 <!-- Cart content will be rendered here -->
             </div>
@@ -594,7 +597,7 @@
         function renderCart() {
             const cart = loadCart();
             const container = document.getElementById('cartContent');
-            
+
             if (cart.length === 0) {
                 container.innerHTML = `
                     <div class="cart-empty">
@@ -666,7 +669,7 @@
             const name = document.getElementById('custName').value || '';
             const addr = document.getElementById('custAddr').value || '';
             const cart = loadCart();
-            
+
             if (cart.length === 0) {
                 showToast('Cart is empty');
                 return;
@@ -674,15 +677,15 @@
 
             let message = 'Order Details:%0A%0A';
             let total = 0;
-            
+
             cart.forEach(item => {
                 const itemTotal = item.price * item.qty;
                 total += itemTotal;
                 message += `${item.qty}x ${item.title} (${item.weight}) - ₹${item.price} each = ₹${itemTotal}%0A`;
             });
-            
+
             message += `%0ATotal: ₹${total}%0A`;
-            
+
             if (name) {
                 message += `%0AName: ${name}`;
             }
@@ -694,7 +697,7 @@
             localStorage.removeItem(CART_KEY);
             hideCheckout();
             renderCart();
-            
+
             // Open WhatsApp
             window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${message}`, '_blank');
             showToast('Order sent to WhatsApp!');
@@ -712,7 +715,7 @@
         document.getElementById('confirmBtn').addEventListener('click', confirmCheckout);
 
         // Close modal on backdrop click
-        document.getElementById('checkoutModal').addEventListener('click', function(e) {
+        document.getElementById('checkoutModal').addEventListener('click', function (e) {
             if (e.target === this) hideCheckout();
         });
 
@@ -720,4 +723,5 @@
         renderCart();
     </script>
 </body>
+
 </html>
