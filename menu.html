@@ -47,51 +47,13 @@
             padding: 0;
         }
 
-        /* Watermark */
         body {
-            --watermark-image: url('images/menu.jpg');
-            --watermark-opacity: 0.25;
-
             font-family: 'Poppins', Georgia, serif;
             background-color: var(--light);
             color: var(--dark-light);
             overflow-x: hidden;
             position: relative;
             line-height: 1.6;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: var(--watermark-image);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            opacity: var(--watermark-opacity);
-            z-index: -1;
-            filter: saturate(0.85) brightness(1.02);
-            will-change: opacity;
-        }
-
-        @media (max-width: 768px) {
-            body::before {
-                opacity: calc(var(--watermark-opacity) * 0.6);
-                background-size: cover;
-                background-position: center center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body::before {
-                opacity: calc(var(--watermark-opacity) * 0.5);
-            }
         }
 
         header {

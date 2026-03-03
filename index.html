@@ -697,39 +697,6 @@
             border-radius: 5px;
         }
 
-        /* Arrows */
-        .hero-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            color: white;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.25s;
-            z-index: 10;
-            backdrop-filter: blur(4px);
-        }
-
-        .hero-arrow:hover {
-            background: rgba(255, 255, 255, 0.4);
-        }
-
-        .hero-arrow.prev {
-            left: 16px;
-        }
-
-        .hero-arrow.next {
-            right: 16px;
-        }
-
         /* Hero Banner - attached to hero section */
         .hero-banner {
             background: var(--primary-gradient);
@@ -771,20 +738,6 @@
             .hero-btn {
                 padding: 10px 22px;
                 font-size: 13px;
-            }
-
-            .hero-arrow {
-                width: 36px;
-                height: 36px;
-                font-size: 14px;
-            }
-
-            .hero-arrow.prev {
-                left: 8px;
-            }
-
-            .hero-arrow.next {
-                right: 8px;
             }
         }
     </style>
@@ -836,30 +789,25 @@
                 <div class="hero-slide">
                     <img src="images/kaju-variety.jpg" alt="Premium Kaju Sweets" loading="eager">
                     <div class="hero-overlay">
-                        <span class="hero-badge">✦ Festival Special ✦</span>
-                        <h1 class="hero-title">Premium Kaju Sweets</h1>
+                        <span class="hero-badge">✦ Premium Kaju Sweets ✦</span>
                         <a href="kaju.variety.html" class="hero-btn">Shop Now →</a>
                     </div>
                 </div>
                 <div class="hero-slide">
                     <img src="images/kalakand.jpg" alt="Fresh Milk Kalakand" loading="lazy">
                     <div class="hero-overlay">
-                        <span class="hero-badge">✦ Festival Special ✦</span>
-                        <h1 class="hero-title">Fresh Milk Kalakand</h1>
+                        <span class="hero-badge">✦ Fresh Milk Kalakand ✦</span>
                         <a href="kalakand.html" class="hero-btn">Shop Now →</a>
                     </div>
                 </div>
                 <div class="hero-slide">
                     <img src="images/Baklava.jpg" alt="Assorted Baklava" loading="lazy">
                     <div class="hero-overlay">
-                        <span class="hero-badge">✦ Festival Special ✦</span>
-                        <h1 class="hero-title">Assorted Baklava</h1>
+                        <span class="hero-badge">✦ Assorted Baklava ✦</span>
                         <a href="baklava.html" class="hero-btn">Shop Now →</a>
                     </div>
                 </div>
             </div>
-            <button class="hero-arrow prev" id="heroPrev" aria-label="Previous slide">&#8592;</button>
-            <button class="hero-arrow next" id="heroNext" aria-label="Next slide">&#8594;</button>
             <div class="hero-dots" id="heroDots">
                 <span class="hero-dot active"></span>
                 <span class="hero-dot"></span>
@@ -1103,8 +1051,6 @@
             dots.forEach((d, i) => {
                 d.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); });
             });
-            document.getElementById('heroNext').addEventListener('click', () => { stopAuto(); next(); startAuto(); });
-            document.getElementById('heroPrev').addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
 
             // Touch swipe
             let tx = 0;

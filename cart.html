@@ -538,6 +538,10 @@
                 <input type="text" id="custName" placeholder="Your name">
             </div>
             <div class="form-group">
+                <label for="custPhone">Phone Number</label>
+                <input type="tel" id="custPhone" placeholder="Phone number">
+            </div>
+            <div class="form-group">
                 <label for="custAddr">Delivery Address (optional)</label>
                 <textarea id="custAddr" rows="3" placeholder="Enter your address"></textarea>
             </div>
@@ -551,6 +555,7 @@
     <!-- Toast -->
     <div class="toast" id="toast"></div>
 
+    <script src="assets/orders.js"></script>
     <script>
         const CART_KEY = 'bs_cart_v1';
         const WHATSAPP_PHONE = '919962899084';
@@ -667,11 +672,30 @@
 
         function confirmCheckout() {
             const name = document.getElementById('custName').value || '';
+            const phone = document.getElementById('custPhone').value || '';
+
+            if (!phone || phone.length < 6) {
+                showToast('Please enter a valid phone number');
+                return;
+            }
+
             const addr = document.getElementById('custAddr').value || '';
             const cart = loadCart();
 
             if (cart.length === 0) {
                 showToast('Cart is empty');
+                return;
+            }
+
+            // Create order in the orders system
+            const order = createOrder({
+                name: name || 'Customer',
+                phone: phone,
+                address: addr || 'Not provided'
+            });
+
+            if (!order) {
+                showToast('Error creating order');
                 return;
             }
 
@@ -685,22 +709,29 @@
             });
 
             message += `%0ATotal: ₹${total}%0A`;
+            message += `%0A*Order ID:* ${order.id}%0A`;
 
             if (name) {
-                message += `%0AName: ${name}`;
+                message += `*Name:* ${name}%0A`;
+            }
+            if (phone) {
+                message += `*Phone:* ${phone}%0A`;
             }
             if (addr) {
-                message += `%0AAddress: ${addr}`;
+                message += `*Address:* ${addr}%0A`;
             }
 
-            // Clear cart and close modal
-            localStorage.removeItem(CART_KEY);
+            // Close modal
             hideCheckout();
+
+            // Clear cart and re-render
+            localStorage.removeItem(CART_KEY);
             renderCart();
 
-            // Open WhatsApp
-            window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${message}`, '_blank');
-            showToast('Order sent to WhatsApp!');
+            // Small delay before opening WhatsApp
+            setTimeout(() => {
+                window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${message}`, '_blank');
+            }, 500);
         }
 
         function showToast(msg) {

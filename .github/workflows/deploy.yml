@@ -1,0 +1,25 @@
+name: Deploy with Secrets
+
+on:
+  push:
+    branches: [ offers-test, main, master, admin-dashboard ]
+  pull_request:
+    branches: [ offers-test, main, master, admin-dashboard ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Inject Admin Password Secret
+      run: |
+        sed -i "s/const ADMIN_PASSWORD = 'balaji2024';/const ADMIN_PASSWORD = '${{ secrets.ADMIN_PASSWORD }}';/" admin-dashboard.html
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
+        cname: BalajiSweetsandCoolDrinks.github.io
