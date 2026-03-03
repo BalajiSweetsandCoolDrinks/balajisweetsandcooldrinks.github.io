@@ -780,7 +780,7 @@
     <script src="assets/orders.js"></script>
     <script>
         let currentOrderId = null;
-        const ADMIN_PASSWORD = 'balaji2024'; // Will be replaced by GitHub Actions with actual secret value
+        const ADMIN_PASSWORD = '${{ secrets.ADMIN_PASSWORD }}';
 
         // Toast notification function
         function showToast(message, type = 'success', duration = 3000) {
